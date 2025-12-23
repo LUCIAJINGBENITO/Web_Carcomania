@@ -8,6 +8,7 @@ body {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
+    cursor: none;
 }
 
 /* ===== LOADER ===== */
@@ -78,5 +79,26 @@ body {
     opacity: 0;
     transform: scale(0.8);
     cursor: pointer;
+
+    background-color: #000000;
+}
+
+/* Cursor personalizado */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;   /* tamaño inicial del cursor */
+    height: 30px;
+    border-radius: 50%;
+    background-color: white; /* color por defecto */
+    pointer-events: none;    /* para que no interfiera con clicks */
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s, transform 0.15s;
+    z-index: 9999;
 }
   
+/* Color especial al pasar por encima del círculo */
+.start-circle:hover ~ .custom-cursor {
+    background-color: #7BC1CF; /* color al pasar por encima */
+}
