@@ -58,7 +58,7 @@ body {
 .start-screen {
     position: fixed;
     inset: 0;
-    background: #0e0e0e;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,7 +78,7 @@ body {
     letter-spacing: 0.08em;
     opacity: 0;
     transform: scale(0.8);
-    cursor: pointer;
+    cursor: none;
 
     background-color: #000000;
 }
@@ -91,14 +91,36 @@ body {
     width: 30px;   /* tamaño inicial del cursor */
     height: 30px;
     border-radius: 50%;
-    background-color: white; /* color por defecto */
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
     pointer-events: none;    /* para que no interfiera con clicks */
     transform: translate(-50%, -50%);
-    transition: background-color 0.3s, transform 0.15s;
+    mix-blend-mode: difference;
     z-index: 9999;
 }
   
 /* Color especial al pasar por encima del círculo */
 .start-circle:hover ~ .custom-cursor {
     background-color: #7BC1CF; /* color al pasar por encima */
+}
+
+.loader-container,
+.start-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+}
+
+.start-circle {
+    position: relative;
+    mix-blend-mode: normal;
+    z-index: 3;
+}
+
+#mouse-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
 }

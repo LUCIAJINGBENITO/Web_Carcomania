@@ -77,14 +77,62 @@ window.addEventListener("mousemove", (e) => {
   gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1, ease: "power3.out" });
 });
 
+/* ===== FONDO REACTIVO AL RATÓN (CANVAS) ===== */
+const canvas = document.createElement("canvas");
+canvas.id = "mouse-bg";
+document.body.insertBefore(canvas, document.body.firstChild);
+
+const ctx = canvas.getContext("2d");
+
+let w, h;
+const resize = () => {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+};
+resize();
+window.addEventListener("resize", resize);
+
+let mouse = { x: w / 2, y: h / 2 };
+let target = { x: mouse.x, y: mouse.y };
+
+window.addEventListener("mousemove", e => {
+  target.x = e.clientX;
+  target.y = e.clientY;
+});
+
+function drawBackground() {
+  mouse.x += (target.x - mouse.x) * 0.08;
+  mouse.y += (target.y - mouse.y) * 0.08;
+
+  ctx.clearRect(0, 0, w, h);
+
+  const gradient = ctx.createRadialGradient(
+    mouse.x, mouse.y, 0,
+    mouse.x, mouse.y, 400
+  );
+
+  gradient.addColorStop(0, "rgba(123,193,207,0.35)");
+  gradient.addColorStop(0.4, "rgba(86,87,156,0.15)");
+  gradient.addColorStop(1, "rgba(0,0,0,0)");
+
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, w, h);
+
+  requestAnimationFrame(drawBackground);
+}
+
+drawBackground();
+
+
+/* ===== INTERACCIONES CURSOR ===== */
 const startCircle = document.querySelector(".start-circle");
 
 startCircle.addEventListener("mouseenter", () => {
-  gsap.to(cursor, { backgroundColor: "#7BC1CF", scale: 1.3, duration: 0.3 });
+  gsap.to(cursor, { scale: 1.6, borderColor: "#7BC1CF", backgroundColor: "rgba(123,193,207,0.2)", duration: 0.3, ease: "power3.out" });
 });
 
 startCircle.addEventListener("mouseleave", () => {
-  gsap.to(cursor, { backgroundColor: "#ffffff", scale: 1, duration: 0.3 });
+  gsap.to(cursor, { scale: 1, borderColor: "rgba(255,255,255,0.8)", backgroundColor: "rgba(255,255,255,0.15)", duration: 0.3, ease: "power3.out" });
 });
 
 /* ===== ANIMACIÓN CLICK COMENZAR ===== */
