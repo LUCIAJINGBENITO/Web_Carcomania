@@ -158,3 +158,31 @@ startCircle.addEventListener("click", () => {
     ease: "power3.in"
   }, 0);
 });
+
+/* ===== REVEAL SCROLL ESTABLE ===== */
+
+if (document.querySelector(".reveal-section")) {
+
+  const tlReveal = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".reveal-section",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+      pin: true, // fija la sección mientras dura la animación
+    }
+  });
+
+  tlReveal.fromTo(
+    ".reveal-shape",
+    { y: "0vh" },
+    { y: "-120vh", ease: "none" }
+  );
+
+  tlReveal.fromTo(
+    ".reveal-text",
+    { color: "#555" },
+    { color: "#ffffff", ease: "none" },
+    0 // sincroniza con la forma
+  );
+}

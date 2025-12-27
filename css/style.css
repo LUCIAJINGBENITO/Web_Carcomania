@@ -1,4 +1,14 @@
+:root {
+    --bg: #0f0f0f;
+    --fg: #fff;
+    --card_1: #b2b2b2;
+    --card_2: #ce2017;
+    --card_3: #2f2f2f;
+}
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
   
@@ -7,7 +17,6 @@ body {
     background: #0e0e0e;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
     cursor: none;
 }
 
@@ -105,6 +114,13 @@ body {
     background-color: #7BC1CF; /* color al pasar por encima */
 }
 
+#mouse-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
 .loader-container,
 .start-screen {
     position: fixed;
@@ -118,9 +134,92 @@ body {
     z-index: 3;
 }
 
-#mouse-bg {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
+
+.accessories-section {
+    background: #0e0e0e;
+    color: #fff;
 }
+  
+.accessories-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.accessories-subtitle {
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.accessory-card {
+  background: #151515;
+  border-radius: 20px;
+  padding: 20px;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.accessory-img {
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.accessory-img img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transform: scale(1.1);
+}
+
+.accessory-card h3 {
+  margin-top: 20px;
+  font-size: 1.3rem;
+}
+
+.accessory-card span {
+  color: #777;
+  font-size: 0.9rem;
+}
+  
+/* ===============================
+   MEDIA QUERYS
+================================ */
+
+@media (max-width: 768px) {
+
+    .accessories-section {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  
+    .accessories-title {
+      font-size: 2.4rem;
+    }
+  
+    .accessories-subtitle {
+      font-size: 0.95rem;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  
+    .accessory-card {
+      padding: 16px;
+      border-radius: 16px;
+    }
+  
+    .accessory-img img {
+      height: 200px;
+      transform: scale(1.05);
+    }
+  
+    .accessory-card h3 {
+      font-size: 1.1rem;
+    }
+  
+    .accessory-card span {
+      font-size: 0.85rem;
+    }
+}
+  
