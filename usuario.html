@@ -16,56 +16,79 @@
     </head>
     <body>
 
-        <section class="accessories-section py-5">
+        <section class="user-area py-5">
             <div class="container">
-              
+          
                 <!-- Header -->
                 <div class="row mb-5">
-                    <div class="col text-center">
-                        <h2 class="accessories-title">Accesorios</h2>
-                        <p class="accessories-subtitle">
-                            Detalles que definen el carácter de tu coche
-                        </p>
+                    <div class="col">
+                        <h2 class="user-title">Mi Garaje</h2>
+                        <p class="user-subtitle">Tu espacio personal en Carcomanía</p>
                     </div>
                 </div>
             
-                <!-- Products -->
+                <!-- Perfil + puntos -->
+                <div class="row g-4 mb-5">
+                    <div class="col-md-6">
+                        <div class="user-card">
+                            <h3>Hola, Jota</h3>
+                            <p>Miembro de CarcomaníaClub</p>
+                        </div>
+                    </div>
+            
+                    <div class="col-md-6">
+                        <div class="user-card highlight">
+                            <h3>CarcomaníaClub</h3>
+                            <span class="points">1.250 puntos</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Mi coche -->
+                <div class="row mb-5">
+                    <div class="col">
+                        <div class="garage-card">
+                            <div class="garage-info">
+                                <h3>Mi coche</h3>
+                                <p>BMW Serie 1 · 2021</p>
+                            </div>
+                            <div class="garage-img">
+                                <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Accesorios guardados -->
                 <div class="row g-4">
-                    
+                    <div class="col-12">
+                        <h3 class="mb-4">Accesorios guardados</h3>
+                    </div>
+            
                     <div class="col-md-4">
-                        <div class="accessory-card">
-                            <div class="accessory-img">
-                                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738" alt="">
-                            </div>
-                            <h3>Vinilos personalizados</h3>
-                            <span>Desde 19€</span>
+                        <div class="accessorys-mini">
+                            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738" alt="">
+                            <span>Vinilo negro mate</span>
                         </div>
                     </div>
             
                     <div class="col-md-4">
-                        <div class="accessory-card">
-                            <div class="accessory-img">
-                                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738" alt="">
-                            </div>
-                            <h3>Emblemas 3D</h3>
-                            <span>Desde 29€</span>
+                        <div class="accessorys-mini">
+                            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738" alt="">
+                            <span>Emblema 3D</span>
                         </div>
                     </div>
             
                     <div class="col-md-4">
-                        <div class="accessory-card">
-                            <div class="accessory-img">
-                                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738" alt="">
-                            </div>
-                            <h3>Protectores premium</h3>
-                            <span>Desde 15€</span>
+                        <div class="accessorys-mini empty">
+                            <span>+ Guardar nuevo</span>
                         </div>
                     </div>
-            
                 </div>
           
             </div>
         </section>
+          
         
         <!-- SCRIPTS PRINCIPALES -->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

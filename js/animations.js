@@ -106,4 +106,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
+  gsap.from(".user-card, .garage-card, .accessory-mini", {
+    scrollTrigger: {
+      trigger: ".user-area",
+      start: "top 70%",
+    },
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    ease: "power4.out",
+    stagger: 0.15
+  });
+  
+
 });
