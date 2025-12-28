@@ -188,7 +188,6 @@ body {
   color: #fdfbff;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
   transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.18s ease, background 0.25s ease;
 }
 
@@ -205,20 +204,24 @@ body {
 }
 
 .carco-icon-badge {
-  position: absolute;
-  top: -4px;
-  right: -2px;
-  min-width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #ff6a88, #ff1744);
-  color: #fff;
-  box-shadow: 0 0 12px rgba(255, 23, 68, 0.8);
+ position: absolute; 
+ top: -8px; 
+ right: -10px; 
+ min-width: 22px; 
+ height: 22px; 
+ padding: 0 6px; 
+ border-radius: 999px; 
+ font-size: 0.75rem; 
+ font-weight: 700; 
+ background: linear-gradient(135deg, #ff6a88, #ff1744); 
+ color: #fff; 
+ box-shadow: 0 0 12px rgba(255, 23, 68, 0.9); 
+ 
+ display: flex; 
+ align-items: center; 
+ justify-content: center; 
+ z-index: 10; 
+ transition: transform 0.2s ease;
 }
 
 /* === PANEL CARRITO === */
@@ -324,3 +327,15 @@ body {
      display: inline-flex;
   align-items: center;
 }
+
+@media (max-width: 768px) { 
+    .carco-icon-badge { 
+        top: -6px; 
+        right: -8px; 
+        min-width: 20px; 
+        height: 20px; 
+        font-size: 0.7rem; 
+        padding: 0 5px; 
+    } 
+}
+
