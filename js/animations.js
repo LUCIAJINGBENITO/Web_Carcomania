@@ -9,9 +9,59 @@ document.addEventListener("DOMContentLoaded", () => {
   cursor.classList.add("custom-cursor");
   document.body.appendChild(cursor);
 
+  let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
   window.addEventListener("mousemove", e => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
     gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.08, ease: "power3.out" });
   });
+
+  /* ===============================
+     CANVAS LIQUID DISTORTION / RIPPLES
+  ================================ */
+  const canvas = document.createElement("canvas");
+  canvas.id = "mouse-bg";
+  document.body.insertBefore(canvas, document.body.firstChild);
+  const ctx = canvas.getContext("2d");
+
+  let w = canvas.width = window.innerWidth;
+  let h = canvas.height = window.innerHeight;
+
+  window.addEventListener("resize", () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  });
+
+  const ripples = [];
+  const maxRadius = 100;
+
+  window.addEventListener("mousemove", e => {
+    ripples.push({ x: e.clientX, y: e.clientY, radius: 0, alpha: 0.4 });
+  });
+
+  function drawCanvas() {
+    ctx.clearRect(0, 0, w, h);
+
+    for (let i = ripples.length - 1; i >= 0; i--) {
+      const r = ripples[i];
+      r.radius += 4;
+      r.alpha *= 0.95;
+
+      const gradient = ctx.createRadialGradient(r.x, r.y, r.radius * 0.1, r.x, r.y, r.radius);
+      gradient.addColorStop(0, `rgba(123,193,207,${r.alpha})`);
+      gradient.addColorStop(0.4, `rgba(86,87,156,${r.alpha * 0.2})`);
+      gradient.addColorStop(1, "rgba(0,0,0,0)");
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(r.x - r.radius, r.y - r.radius, r.radius * 2, r.radius * 2);
+
+      if (r.alpha < 0.01 || r.radius > maxRadius) ripples.splice(i, 1);
+    }
+
+    requestAnimationFrame(drawCanvas);
+  }
+  drawCanvas();
 
   /* ===============================
      HOVER-TEXT GLOBAL
@@ -21,14 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("mousemove", e => {
     hoverTexts.forEach(el => {
       const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left; // posición relativa dentro del texto
+      const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      // Convertimos a porcentaje
       const px = (x / rect.width) * 100;
       const py = (y / rect.height) * 100;
 
-      // Movemos el gradiente para que la "lupa" siga el cursor
       el.style.background = `radial-gradient(circle 50px at ${px}% ${py}%, #7BC1CF, #fff)`;
       el.style.backgroundClip = 'text';
       el.style.webkitBackgroundClip = 'text';
@@ -74,11 +122,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ===============================
-     MATCHMEDIA
+     MATCHMEDIA: TILT, PARALLAX Y GLOW
   ================================ */
   const mm = gsap.matchMedia();
 
-  /* -------- DESKTOP: hover, tilt 3D, parallax -------- */
   mm.add("(min-width: 769px)", () => {
     document.querySelectorAll(".accessory-mini").forEach(card => {
       const glow = card.querySelector(".glow");
@@ -89,15 +136,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
 
-        // Tilt 3D
-        const rotX = y * 0.05;
-        const rotY = x * 0.05;
-        gsap.to(card, { rotationX: -rotX, rotationY: rotY, duration: 0.3, ease: "power2.out" });
-
-        // Parallax interno
+        gsap.to(card, { rotationX: -y * 0.05, rotationY: x * 0.05, duration: 0.3, ease: "power2.out" });
         gsap.to(img, { x: x * 0.05, y: y * 0.05, duration: 0.3, ease: "power2.out" });
 
-        // Glow dinámico
         if (glow) {
           glow.style.opacity = 1;
           glow.style.transform = `translate(${x}px, ${y}px)`;
@@ -115,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* -------- MOBILE: parallax y glow ligero -------- */
   mm.add("(max-width: 768px)", () => {
     document.querySelectorAll(".accessory-mini").forEach(card => {
       const glow = card.querySelector(".glow");
@@ -126,10 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
 
-        // Parallax más suave
         gsap.to(img, { x: x * 0.02, y: y * 0.02, duration: 0.3, ease: "power2.out" });
-
-        // Glow más suave
         if (glow) {
           glow.style.opacity = 0.6;
           glow.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;

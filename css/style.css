@@ -29,7 +29,17 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   transition: background-position 0.1s ease;
-  cursor: pointer;
+}
+
+.hover-text.clickable {
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
+
+.hover-text.clickable:hover {
+  text-shadow: 0 0 8px #7BC1CF, 0 0 16px #7BC1CF;
+  transform: scale(1.1);
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
+  text-shadow: 0 0 10px #7BC1CF, 0 0 20px #7BC1CF;
 }
 
 /* ======================================== LOADER =================================== */
@@ -218,10 +228,31 @@ body {
 .user-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
   letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
 }
 
 .user-subtitle {
   color: #888;
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.user-card::before,
+.garage-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(123,193,207,0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.user-card:hover::before,
+.garage-card:hover::before {
+  opacity: 1;
 }
 
 .user-card,
@@ -268,6 +299,12 @@ body {
   object-fit: cover;
 }
 
+.user-card:hover,
+.garage-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 50px rgba(0,0,0,0.6);
+}
+
 .accessory-mini {
   position: relative;
   border-radius: 16px;
@@ -276,10 +313,17 @@ body {
   flex-direction: column;
   gap: 10px;
   overflow: hidden;
-  cursor: pointer; /* asegura que el cursor aparezca siempre */
+  cursor: none;
   pointer-events: auto;
   transform-style: preserve-3d;
   transition: transform 0.3s ease;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.accessory-mini:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
 }
 
 .accessory-mini::before {
@@ -407,7 +451,6 @@ body {
 
 @media (hover: hover) {
   .accessory-mini {
-    cursor: pointer;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
 
