@@ -1,143 +1,143 @@
 :root {
-    --bg: #0f0f0f;
-    --fg: #fff;
-    --card_1: #b2b2b2;
-    --card_2: #ce2017;
-    --card_3: #2f2f2f;
+  --bg: #0f0f0f;
+  --fg: #fff;
+  --card_1: #b2b2b2;
+  --card_2: #ce2017;
+  --card_3: #2f2f2f;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
   
 body {
-    margin: 0;
-    background: #0e0e0e;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    cursor: none;
+  margin: 0;
+  background: #0e0e0e;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: none;
 }
 
-/* ===== LOADER ===== */
+/* ======================================== LOADER =================================== */
 
 .loader-container {
-    position: fixed;
-    inset: 0;
-    height: 100vh;
-    padding: 0 4vw;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    align-items: center;
-    justify-content: center;
-    column-gap: 2.5vw;
-    transform-origin: center;
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  padding: 0 4vw;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2.5vw;
+  transform-origin: center;
 }
 
 .loader-text {
-    font-size: 8rem;
-    letter-spacing: 0.05em;
-    white-space: nowrap;
+  font-size: 8rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .loader-bar {
-    position: relative;
-    width: 50vw;
-    height: 5rem;
-    padding: 0.6rem;
-    border-radius: 999px;
-    border: 1.5px solid white;
-    overflow: hidden;
+  position: relative;
+  width: 50vw;
+  height: 5rem;
+  padding: 0.6rem;
+  border-radius: 999px;
+  border: 1.5px solid white;
+  overflow: hidden;
 }
 
 .loader-dot {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 4rem;
-    height: 4rem;
-    background: white;
-    border-radius: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 4rem;
+  height: 4rem;
+  background: white;
+  border-radius: 50%;
+  transform: translateY(-50%);
 }
 
-/* ===== START SCREEN ===== */
+/* ======================================== START SCREEN =================================== */
 
 .start-screen {
-    position: fixed;
-    inset: 0;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .start-circle {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 1.5px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    letter-spacing: 0.08em;
-    opacity: 0;
-    transform: scale(0.8);
-    cursor: none;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 1.5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transform: scale(0.8);
+  cursor: none;
 
-    background-color: #000000;
+  background-color: #000000;
 }
 
 /* Cursor personalizado */
 .custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 30px;   /* tamaño inicial del cursor */
-    height: 30px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1.5px solid rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(2px);
-    pointer-events: none;    /* para que no interfiera con clicks */
-    transform: translate(-50%, -50%);
-    mix-blend-mode: difference;
-    z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;   /* tamaño inicial del cursor */
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px);
+  pointer-events: none;    /* para que no interfiera con clicks */
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  z-index: 9999;
 }
   
 /* Color especial al pasar por encima del círculo */
 .start-circle:hover ~ .custom-cursor {
-    background-color: #7BC1CF; /* color al pasar por encima */
+  background-color: #7BC1CF; /* color al pasar por encima */
 }
 
 #mouse-bg {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .loader-container,
 .start-screen {
-    position: fixed;
-    inset: 0;
-    z-index: 2;
+  position: fixed;
+  inset: 0;
+  z-index: 2;
 }
 
 .start-circle {
-    position: relative;
-    mix-blend-mode: normal;
-    z-index: 3;
+  position: relative;
+  mix-blend-mode: normal;
+  z-index: 3;
 }
 
-/* ===== accessories ===== */
+/* ======================================== accessories =================================== */
 .accessories-section {
-    background: #0e0e0e;
-    color: #fff;
+  background: #0e0e0e;
+  color: #fff;
 }
   
 .accessories-title {
@@ -183,10 +183,21 @@ body {
   font-size: 0.9rem;
 }
 
-/* ===== user ===== */
+/* ======================================== user =================================== */
+
 .user-area {
-    background: #0c0c0c;
-    color: #fff;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.08),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255, 255, 255, 0.05),
+      transparent 40%
+    ),
+    #0c0c0c;
 }
   
 .user-title {
@@ -196,6 +207,18 @@ body {
 
 .user-subtitle {
   color: #888;
+}
+
+.user-card,
+.garage-card,
+.accessory-mini {
+  background: rgba(20, 20, 20, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .user-card {
@@ -230,8 +253,7 @@ body {
   object-fit: cover;
 }
 
-.accessorys-mini {
-  background: #151515;
+.accessory-mini {
   border-radius: 16px;
   padding: 16px;
   display: flex;
@@ -239,38 +261,24 @@ body {
   gap: 10px;
 }
 
-.accessorys-mini img {
+.accessory-mini img {
   width: 100%;
   height: 160px;
   object-fit: cover;
   border-radius: 12px;
 }
 
-.accessorys-mini.empty {
+.accessory-mini.empty {
+  background: rgba(15, 15, 15, 0.4);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #777;
-}
-  
-.user-card,
-.garage-card,
-.accessory-mini {
-  background: rgba(20, 20, 20, 0.55);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
 }
 
-.user-card.highlight {
-    background: rgba(30, 30, 30, 0.65);
-    backdrop-filter: blur(18px);
-}
-
-.accessory-mini.empty {
-    backdrop-filter: blur(10px);
-    background: rgba(15, 15, 15, 0.4);
-}
+/* ======================================== MEDIA QUERYS =================================== */
 
 /* ===============================
    MEDIA QUERYS
@@ -278,51 +286,51 @@ body {
 
 @media (max-width: 768px) {
 
-    .accessories-section {
-      padding-top: 80px;
-      padding-bottom: 80px;
-    }
-  
-    .accessories-title {
-      font-size: 2.4rem;
-    }
-  
-    .accessories-subtitle {
-      font-size: 0.95rem;
-      max-width: 90%;
-      margin: 0 auto;
-    }
-  
-    .accessory-card {
-      padding: 16px;
-      border-radius: 16px;
-    }
-  
-    .accessory-img img {
-      height: 200px;
-      transform: scale(1.05);
-    }
-  
-    .accessory-card h3 {
-      font-size: 1.1rem;
-    }
-  
-    .accessory-card span {
-      font-size: 0.85rem;
-    }
+  .accessories-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
 
-    .garage-card {
-        flex-direction: column;
-    }
-    
-    .garage-img img {
-      width: 100%;
-    }
+  .accessories-title {
+    font-size: 2.4rem;
+  }
 
-    .user-card,
-    .garage-card,
-    .accessory-mini {
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
+  .accessories-subtitle {
+    font-size: 0.95rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .accessory-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .accessory-img img {
+    height: 200px;
+    transform: scale(1.05);
+  }
+
+  .accessory-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .accessory-card span {
+    font-size: 0.85rem;
+  }
+
+  .garage-card {
+      flex-direction: column;
+  }
+  
+  .garage-img img {
+    width: 100%;
+  }
+
+  .user-card,
+  .garage-card,
+  .accessory-mini {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 }
