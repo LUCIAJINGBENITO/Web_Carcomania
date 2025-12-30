@@ -20,6 +20,18 @@ body {
   cursor: none;
 }
 
+.hover-text {
+  position: relative;
+  display: inline-block;
+  color: #fff; /* color base */
+  background: linear-gradient(90deg, #7BC1CF 0%, #7BC1CF 0%, #fff 0%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: background-position 0.1s ease;
+  cursor: pointer;
+}
+
 /* ======================================== LOADER =================================== */
 
 .loader-container {
@@ -184,6 +196,9 @@ body {
 }
 
 /* ======================================== user =================================== */
+.user-area .container {
+  padding-bottom: 60px;
+}
 
 .user-area {
   background:
@@ -254,11 +269,51 @@ body {
 }
 
 .accessory-mini {
+  position: relative;
   border-radius: 16px;
   padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow: hidden;
+  cursor: pointer; /* asegura que el cursor aparezca siempre */
+  pointer-events: auto;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.accessory-mini::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  border-radius: 16px;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 40%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: screen;
+}
+
+.accessory-mini .glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  border-radius: 16px;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 40%);
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  transition: opacity 0.3s ease;
+}
+
+.glow {
+  pointer-events: none; /* no bloquea eventos */
 }
 
 .accessory-mini img {
@@ -266,6 +321,7 @@ body {
   height: 160px;
   object-fit: cover;
   border-radius: 12px;
+  transform: translate3d(0,0,0);
 }
 
 .accessory-mini.empty {
@@ -276,6 +332,20 @@ body {
   justify-content: center;
   color: #777;
   text-align: center;
+}
+
+.accessory-mini:hover {
+  transform: scale(1.02) translateY(-5px);
+}
+
+/* Blur general para tarjetas */
+.user-card, .garage-card, .accessory-mini {
+  background: rgba(20,20,20,0.35);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
 /* ======================================== MEDIA QUERYS =================================== */
@@ -332,5 +402,19 @@ body {
   .accessory-mini {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+@media (hover: hover) {
+  .accessory-mini {
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .accessory-mini:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+      0 30px 50px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 }
