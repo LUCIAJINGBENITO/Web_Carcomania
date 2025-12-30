@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       r.radius += 4;
       r.alpha *= 0.95;
 
-      const gradient = ctx.createRadialGradient(r.x, r.y, r.radius * 0.1, r.x, r.y, r.radius);
+      const gradient = ctx.createRadialGradient(r.x, r.y, r.radius * 0.2, r.x, r.y, r.radius);
       gradient.addColorStop(0, `rgba(123,193,207,${r.alpha})`);
       gradient.addColorStop(0.4, `rgba(86,87,156,${r.alpha * 0.2})`);
       gradient.addColorStop(1, "rgba(0,0,0,0)");
