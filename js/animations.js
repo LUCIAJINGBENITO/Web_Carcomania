@@ -183,4 +183,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* ===============================
+   USER PANEL <details> GSAP
+  =============================== */
+  document.querySelectorAll('.panel-accordion').forEach(accordion => {
+    const btn = accordion.querySelector('.panel-header');
+    const content = accordion.querySelector('.panel-content');
+    const arrow = accordion.querySelector('.arrow-icon');
+  
+    // Estado inicial: ocultar contenido
+    gsap.set(content, { height: 0, opacity: 0 });
+  
+    btn.addEventListener('click', () => {
+      const isOpen = accordion.classList.contains('open');
+  
+      if (isOpen) {
+        // Cerrar
+        gsap.to(content, { height: 0, opacity: 0, duration: 0.4, ease: "power2.inOut" });
+        gsap.to(arrow, { rotation: 0, duration: 0.4, ease: "power2.inOut" });
+        accordion.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        // Abrir
+        const fullHeight = content.scrollHeight;
+        gsap.to(content, { height: fullHeight, opacity: 1, duration: 0.4, ease: "power2.inOut" });
+        gsap.to(arrow, { rotation: 90, duration: 0.4, ease: "power2.inOut" });
+        accordion.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+  
+
+
 });
