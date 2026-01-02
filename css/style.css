@@ -631,7 +631,7 @@ body {
 }
 
 
-/* ===================== CATALOGO ===================== */
+/* ==================================== CATALOGO ==================================== */
 .catalog-area {
   padding: 5rem 0;
   background: #0f0f0f;
@@ -706,7 +706,8 @@ body {
 
 /* Imagen */
 .catalog-area .catalog-card img {
-  width: 100%;
+  width: calc(100% + 24px); /* suma el padding izquierdo + derecho */
+  margin: -12px 0 0 -12px;  /* mueve la img para que “llene” todo el card */
   height: 160px;
   object-fit: cover;
   border-radius: 12px;
@@ -772,6 +773,11 @@ body {
 
 .catalog-area .badge-exclusive {
   background: linear-gradient(135deg, #d4af37, #f5d76e);
+  color: #000;
+}
+
+.catalog-area .badge-accesorios {
+  background: linear-gradient(135deg, #37cfd4, #756ef5);
   color: #000;
 }
 
