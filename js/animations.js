@@ -213,7 +213,28 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  window.addEventListener('load', () => {
+    const row = document.querySelector('.row.g-4.align-cards');
+    if (!row) return;
   
+    const cols = row.querySelectorAll('.col-md-6');
+    let maxHeight = 0;
+  
+    // Calcula altura máxima
+    cols.forEach(col => {
+      const card = col.querySelector('.user-card');
+      if (card) {
+        const h = card.offsetHeight;
+        if (h > maxHeight) maxHeight = h;
+      }
+    });
+  
+    // Aplica altura máxima a todas las tarjetas
+    cols.forEach(col => {
+      const card = col.querySelector('.user-card');
+      if (card) card.style.height = maxHeight + 'px';
+    });
+  });
 
 
 });
