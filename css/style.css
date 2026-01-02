@@ -792,7 +792,11 @@ body {
   transform: translateY(-2px);
 }
 
-
+.catalog-card .catalog-desc {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+}
 
 button,
 .btn-edit,
