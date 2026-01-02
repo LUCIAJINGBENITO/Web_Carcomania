@@ -631,7 +631,7 @@ body {
 }
 
 
-/* ===================== CATALOGO AISLADO ===================== */
+/* ===================== CATALOGO ===================== */
 .catalog-area {
   padding: 5rem 0;
   background: #0f0f0f;
@@ -687,8 +687,7 @@ body {
 
 /* Tarjeta individual */
 .catalog-area .catalog-card {
-  background: rgba(20,20,20,0.35);
-  backdrop-filter: blur(16px);
+  background: #0f0f0f; /* mismo fondo que la sección */
   border-radius: 16px;
   padding: 12px;
   display: flex;
@@ -697,11 +696,12 @@ body {
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .catalog-area .catalog-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 30px 50px rgba(0,0,0,0.6);
+  box-shadow: 0 30px 50px rgba(123,193,207,0.5), 0 0 20px rgba(123,193,207,0.2) inset;
 }
 
 /* Imagen */
@@ -778,6 +778,12 @@ body {
 .catalog-area .catalog-card:hover .catalog-badge {
   transform: scale(1.05);
   transition: transform 0.3s ease;
+}
+
+.catalog-filters button.active {
+  background: linear-gradient(135deg, #7BC1CF, #d4af37);
+  color: #000;
+  transform: translateY(-2px);
 }
 
 

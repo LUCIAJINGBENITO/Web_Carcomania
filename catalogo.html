@@ -20,24 +20,28 @@
             <div class="container">
           
                 <!-- Header del catálogo -->
-                <div class="catalog-header mb-4">
-                    <h2>Catálogo de Accesorios</h2>
-                    <p>Explora nuestros Kits, Colecciones y Favoritos</p>
+                 <!-- Header -->
+                <div class="row mb-5">
+                    <div class="col d-flex flex-column">
+                        <h2 class="user-title hover-text">Catálogo de Accesorios</h2>
+                        <p class="user-subtitle hover-text">Explora nuestros Kits, Colecciones y Favoritos</p>
+                    </div>
                 </div>
             
                 <!-- Filtros por categoría -->
                 <div class="catalog-filters mb-4">
-                    <button>Stickers</button>
-                    <button>Llaveros</button>
-                    <button>Fundas</button>
-                    <button>Accesorios</button>
+                    <button data-filter="all">Todos</button>
+                    <button data-filter="stickers">Stickers</button>
+                    <button data-filter="llaveros">Llaveros</button>
+                    <button data-filter="fundas">Fundas</button>
+                    <button data-filter="accesorios">Accesorios</button>
                 </div>
             
                 <!-- Grid de productos -->
                 <div class="catalog-grid">
             
                     <!-- Producto individual -->
-                    <div class="catalog-card">
+                    <div class="catalog-card" data-category="stickers">
                         <div class="position-relative">
                             <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
                             <span class="catalog-badge badge-new">Nuevo</span>
@@ -47,7 +51,7 @@
                         <button class="btn-edit">Agregar al carrito</button>
                     </div>
             
-                    <div class="catalog-card">
+                    <div class="catalog-card" data-category="llaveros">
                         <div class="position-relative">
                             <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
                             <span class="catalog-badge badge-popular">Popular</span>
@@ -57,7 +61,17 @@
                         <button class="btn-edit">Agregar al carrito</button>
                     </div>
             
-                    <div class="catalog-card">
+                    <div class="catalog-card" data-category="fundas">
+                        <div class="position-relative">
+                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
+                            <span class="catalog-badge badge-exclusive">Exclusivo Club</span>
+                        </div>
+                        <h3>Funda “Carbon”</h3>
+                        <p>$18.99</p>
+                        <button class="btn-edit">Agregar al carrito</button>
+                    </div>
+
+                    <div class="catalog-card" data-category="accesorios">
                         <div class="position-relative">
                             <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
                             <span class="catalog-badge badge-exclusive">Exclusivo Club</span>

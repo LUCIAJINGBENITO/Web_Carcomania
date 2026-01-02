@@ -213,6 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
   window.addEventListener('load', () => {
     const row = document.querySelector('.row.g-4.align-cards');
     if (!row) return;
@@ -236,5 +237,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* ===============================
+     FILTROS CATALOGO
+  ================================ */
+  const filterButtons = document.querySelectorAll('.catalog-filters button');
+  const catalogCards = document.querySelectorAll('.catalog-card');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.filter;
+
+      catalogCards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex'; // mostrar
+        } else {
+          card.style.display = 'none'; // ocultar
+        }
+      });
+
+      // Botón activo
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
 
 });
