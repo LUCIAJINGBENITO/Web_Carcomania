@@ -1,104 +1,125 @@
 * {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
-  
+
 body {
-    margin: 0;
-    background: #0e0e0e;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
-    cursor: none;
+    background: #eef8ff;
 }
 
-/* ===== LOADER ===== */
-
-.loader-container {
-    position: fixed;
-    inset: 0;
-    height: 100vh;
-    padding: 0 4vw;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    align-items: center;
-    justify-content: center;
-    column-gap: 2.5vw;
-    transform-origin: center;
-}
-
-.loader-text {
-    font-size: 8rem;
-    letter-spacing: 0.05em;
-    white-space: nowrap;
-}
-
-.loader-bar {
-    position: relative;
-    width: 50vw;
-    height: 5rem;
-    padding: 0.6rem;
-    border-radius: 999px;
-    border: 1.5px solid white;
-    overflow: hidden;
-}
-
-.loader-dot {
+footer {
+    width: 100%;
     position: absolute;
-    top: 50%;
+    bottom: 0;
+    background: linear-gradient(to right, #00093c, #2d0b00);
+    color: #fff;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.col {
+    flex-basis: 25%;
+    padding: 10px;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+.col h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Estilo y Animación del Subrayado */
+.underline {
+    width: 100%;
+    height: 5px;
+    background: #767676;
+    border-radius: 3px;
+    position: absolute;
+    top: 25px;
     left: 0;
-    width: 4rem;
-    height: 4rem;
-    background: white;
-    border-radius: 50%;
-    transform: translateY(-50%);
+    overflow: hidden;
 }
 
-/* ===== START SCREEN ===== */
-
-.start-screen {
-    position: fixed;
-    inset: 0;
-    background: #0e0e0e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.start-circle {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 1.5px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    letter-spacing: 0.08em;
-    opacity: 0;
-    transform: scale(0.8);
-    cursor: pointer;
-
-    background-color: #000000;
-}
-
-/* Cursor personalizado */
-.custom-cursor {
-    position: fixed;
+.underline span {
+    width: 15px;
+    height: 100%;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
     top: 0;
-    left: 0;
-    width: 30px;   /* tamaño inicial del cursor */
-    height: 30px;
-    border-radius: 50%;
-    background-color: white; /* color por defecto */
-    pointer-events: none;    /* para que no interfiera con clicks */
-    transform: translate(-50%, -50%);
-    transition: background-color 0.3s, transform 0.15s;
-    z-index: 9999;
+    left: 10px;
+    animation: moving 2s linear infinite;
 }
-  
-/* Color especial al pasar por encima del círculo */
-.start-circle:hover ~ .custom-cursor {
-    background-color: #7BC1CF; /* color al pasar por encima */
+
+@keyframes moving {
+    0% { left: -20px; }
+    100% { left: 100%; }
+}
+
+/* Formulario de Newsletter */
+form {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+
+form input {
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+}
+
+form button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+form button .fas {
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* Iconos Sociales */
+.social-icons .fab {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+/* Responsividad */
+@media (max-width: 700px) {
+    footer { bottom: unset; }
+    .col { flex-basis: 100%; }
+    .row { flex-direction: column; }
 }
