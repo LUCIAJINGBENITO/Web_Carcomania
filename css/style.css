@@ -195,34 +195,66 @@ body {
   color: #7BC1CF;
 }
 
-.user-area .row.g-4 {
-  margin-bottom: 24px; /* antes tenías 80px, demasiado */
+/* ==================== USER AREA UNIFORME ==================== */
+
+/* Todas las filas tienen el mismo espacio */
+.user-area .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;       /* espacio uniforme entre tarjetas */
+  margin-bottom: 40px; /* espacio uniforme entre filas */
 }
 
-.user-card {
-  margin-bottom: 12px; /* si quieres un pequeño espacio extra entre tarjetas */
+/* Última fila sin margen */
+.user-area .row:last-child {
+  margin-bottom: 0;
 }
 
-/* ===================== USER CARDS ===================== */
+/* Títulos de secciones */
+.user-area h3.hover-text {
+  font-size: 1.8rem;
+  margin-bottom: 16px; /* espacio controlado entre título y fila siguiente */
+}
+
+/* ==================== USER CARDS ==================== */
 .user-card {
-  position: relative;
+  flex: 1 1 calc(50% - 12px); /* 2 por fila, ajustable */
   background: rgba(20, 20, 20, 0.35);
   backdrop-filter: blur(16px);
   border-radius: 20px;
   padding: 28px;
-  height: 100%;
   border: 1px solid rgba(255,255,255,0.08);
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    0 20px 40px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  cursor: none; /* cursor personalizado */
+  cursor: none;
 }
 
-.user-card:hover::before {
-  opacity: 1;
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 30px 50px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  background: linear-gradient(135deg, rgba(30,30,30,0.7), rgba(10,10,10,0.7));
 }
 
+.user-card.highlight {
+  background: linear-gradient(135deg, #1f1f1f, #111);
+  border: 1px solid rgba(212,175,55,0.3);
+  box-shadow:
+    0 20px 50px rgba(212,175,55,0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.user-card.highlight:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 35px 70px rgba(212,175,55,0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Hover radial interno */
 .user-card::before {
   content: "";
   position: absolute;
@@ -235,28 +267,8 @@ body {
   z-index: -1;
 }
 
-.user-card:hover {
-  transform: translateY(-5px);
-  box-shadow:
-    0 30px 50px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255,255,255,0.05);
-  background: linear-gradient(135deg, rgba(30,30,30,0.7), rgba(10,10,10,0.7));
-}
-
-/* Tarjeta destacada */
-.user-card.highlight {
-  background: linear-gradient(135deg, #1f1f1f, #111);
-  border: 1px solid rgba(212,175,55,0.3);
-  box-shadow:
-    0 20px 50px rgba(212,175,55,0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-}
-
-.user-card.highlight:hover {
-  box-shadow:
-    0 35px 70px rgba(212,175,55,0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  transform: translateY(-6px) scale(1.01);
+.user-card:hover::before {
+  opacity: 1;
 }
 
 /* Texto dentro de las tarjetas */
@@ -272,6 +284,7 @@ body {
   color: rgba(255,255,255,0.7);
   margin-bottom: 0;
 }
+
 
 .points {
   font-size: 2rem;
@@ -526,7 +539,7 @@ body {
   padding: 48px;
   border-radius: 40px;
   margin-top: 40px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 
   background:
     radial-gradient(circle at top left, rgba(123,193,207,0.25), transparent 40%),
@@ -582,21 +595,30 @@ body {
   box-shadow: 0 30px 50px rgba(0,0,0,0.6);
 }
 
+/* Accesorios */
 .accessory-mini {
   position: relative;
   border-radius: 16px;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 10px; /* espacio interno entre img y texto */
   overflow: hidden;
   cursor: none;
   pointer-events: auto;
   transform-style: preserve-3d;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  z-index: 1;
+}
+
+.accessory-mini.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  text-align: center;
+  background: rgba(15, 15, 15, 0.4);
+  backdrop-filter: blur(10px);
 }
 
 .accessory-mini:hover {
@@ -644,16 +666,6 @@ body {
   object-fit: cover;
   border-radius: 12px;
   transform: translate3d(0,0,0);
-}
-
-.accessory-mini.empty {
-  background: rgba(15, 15, 15, 0.4);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #777;
-  text-align: center;
 }
 
 .accessory-mini:hover {
@@ -746,7 +758,6 @@ body {
 .panel-content {
   cursor: none; /* opcional, si quieres que el contenido tampoco tenga mano */
 }
-
 
 /* ==================================== CATALOGO ==================================== */
 .catalog-area {
