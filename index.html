@@ -11,8 +11,13 @@
         <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
         <!-- Bootstrap Icons -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Fontawesome  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
         <!-- Custom CSS -->
         <link href="css/style.css" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="icon" type="image/jpg" href="media/icon/favicon.ico"/>
+        
     </head>
     <body>
 
@@ -87,16 +92,93 @@
 
 
 
+        <!-- HERO HOME -->
+        <section class="carco-hero">
 
+            <!-- Palabra gigante fondo -->
+            <h1 class="carco-hero-bg" aria-hidden="true">carcomania</h1>
 
+            <!-- Contenido principal -->
+            <div class="carco-hero-content container">
 
+                <!-- Imagen coche -->
+                <div class="carco-hero-car" data-aos="zoom-in" data-aos-duration="1200">
+                <img src="media/img/car1.webp" alt="Coche personalizado Carcomanía">
+                </div>
 
+                <!-- Lema -->
+                <p class="carco-hero-tagline" data-aos="fade-up" data-aos-delay="200">
+                Accesorios de vehículos que reflejan tu estilo, tu creatividad y tu actitud urbana.
+                </p>
 
+                <!-- Botones -->
+                <div class="carco-hero-actions" data-aos="fade-up" data-aos-delay="350">
+                <a href="#catalogo" class="carco-btn-primary">Ver catálogo</a>
+                <a href="#club" class="carco-btn-secondary">Únete al Club</a>
+                </div>
 
+            </div>
 
+            <!-- Glow inferior -->
+            <div class="carco-hero-glow"></div>
 
+        </section>
 
-
+        <!-- empieza el footer  -->
+        <footer>
+            <div class="footer-container" class="degradado-principal">
+                <div class="footer-section">
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Política de Cookies</a></li>
+                    <li><a href="#">Accesibilidad</a></li>
+                    <li><a href="#">Aviso legal</a></li>
+                    <li><a href="#">Configuración</a></li>
+                </ul>
+                </div>
+                <div class="footer-section">
+                <h3>Sobre Carcomanía</h3>
+                <ul>
+                    <li><a href="#">¿Quiénes somos?</a></li>
+                    <li><a href="#">Recursos para artistas</a></li>
+                    <li><a href="#">Carcomaníacos</a></li>
+                    <li><a href="#">Descargar App</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                </ul>
+                </div>
+                <div class="footer-section">
+                <h3>Idioma</h3>
+                <ul>
+                    <li><a href="#">Español (España)</a></li>
+                    <li><a href="#">English (British)</a></li>
+                </ul>
+                </div>
+                <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Escribe tu email">
+                    <button type="submit">Suscribirse</button>
+                </form>
+                </div>
+                <div class="footer-section">
+                <h3>Síguenos</h3>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/?locale=es_ES"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://x.com/home"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2025 Todos los derechos reservados</p>
+                <span class="link">
+                <a class="back_home" href="#"><i class="fas fa-arrow-up"></i></a>
+                </span>
+            </div>
+        </footer>
+        <!-- acaba el footer  -->
 
 
         <!-- SCRIPTS PRINCIPALES -->
@@ -104,14 +186,17 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
         <script src="js/scripthome.js"></script>
+        <script src="js/home.js"></script>
+
+        <!-- AOS -->
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
         <!-- Swiper -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
         <!-- GSAP + ScrollTrigger -->
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
 
         <!-- LENIS -->
         <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>

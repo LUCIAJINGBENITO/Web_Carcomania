@@ -1,5 +1,15 @@
 * {
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+/* Variables de color */
+:root{
+  --white: #fff;
+  --gradient-text: (90deg, #3F0043, #56579C);
+  --darkpurple: ( #3F0043);
+  --lightpurple: ( #56579C);
 }
 
 body {
@@ -7,8 +17,19 @@ body {
     background: #0e0e0e;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
-    cursor: none;
+    overflow-x: hidden;
+}
+
+/* Tipografías */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@font-face {
+  font-family: "Bootzy";
+  src: url("../media/typo/BootzyTM.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* ===== LOADER ===== */
@@ -339,3 +360,263 @@ body {
     } 
 }
 
+
+/* Empieza la HOME  */
+
+/* ===============================
+   HERO HOME
+================================ */
+
+.carco-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1rem 4rem;
+  padding-top: 7.5rem; 
+  padding-bottom: 4rem;
+}
+
+/* Palabra gigante fondo */
+.carco-hero-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Bootzy", sans-serif;
+  font-size: clamp(6rem, 20vw, 22rem);
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Contenido */
+.carco-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+/* Imagen coche */
+.carco-hero-car img {
+  max-width: 100%;
+  width: 680px;
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(123, 47, 247, 0.45));
+}
+
+/* Lema */
+.carco-hero-tagline {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+/* Botones */
+.carco-hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.carco-btn-primary,
+.carco-btn-secondary {
+  padding: 0.8rem 1.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.carco-btn-primary {
+  background: linear-gradient(135deg, #ff6a88, #7b2ff7);
+  color: #fff;
+  box-shadow: 0 0 24px rgba(123, 47, 247, 0.6);
+}
+
+.carco-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 36px rgba(123, 47, 247, 0.9);
+}
+
+.carco-btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  background: transparent;
+}
+
+.carco-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Glow inferior */
+.carco-hero-glow {
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(123,47,247,0.45), transparent 70%);
+  filter: blur(80px);
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carco-hero {
+    padding-top: 4rem;
+  }
+
+  .carco-hero-tagline {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* Termina la HOME  */
+
+/* empieza el footer  */
+footer {
+  background: linear-gradient(217deg,
+      black,
+      rgba(255, 0, 0, 0) 30.71%),
+    linear-gradient(127deg, #0f0117, #2b1b6cea 60.71%),
+    linear-gradient(336deg, #321a5799, #450d60 90.71%);
+  color: #fff;
+  padding: 40px 20px 20px 20px;
+  margin-top: 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+  margin: 5px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li a:hover {
+  color: black;
+}
+
+.footer-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section input[type="email"] {
+  padding: 10px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.238);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  color: #fff;
+}
+
+.footer-section button {
+  margin-right: 15px;
+  padding: 10px;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.573);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-section button:hover {
+  background: rgba(0, 0, 0, 0.584);
+}
+
+.social-icons {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.social-icons li {
+  margin-right: 10px;
+}
+
+.social-icons li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+}
+
+.social-icons li a:hover {
+  color: black;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid white;
+  margin-top: 20px;
+}
+
+.back_home {
+  align-items: center;
+  color: white !important; 
+    text-decoration: none;
+}
+
+.back_home:hover {
+  color: black;
+}
+
+/* acaba el footer  */
