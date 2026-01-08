@@ -283,10 +283,13 @@ body {
   text-shadow: 0 0 6px rgba(212,175,55,0.5);
 }
 
-/* ================================================= PROFILE ============================================ */
+/* ========================================= PROFILE ================================== */
 
 .profile-card {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 24px;
   padding: 28px;
   border-radius: 32px;
@@ -323,8 +326,8 @@ body {
 
 .level-badge {
   position: absolute;
-  bottom: -6px;
-  right: -6px;
+  bottom: -25px;
+  right: -25px;
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 0.7rem;
@@ -334,6 +337,27 @@ body {
   background: linear-gradient(135deg, #d4af37, #f5d76e);
   color: #000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.profile-name {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 12px;
+}
+
+.profile-name p {
+  opacity: 0.75;
+  font-size: 0.95rem;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+  max-width: 480px;
 }
 
 .profile-info h3 {
@@ -383,18 +407,26 @@ body {
 }
 
 .profile-extra {
+  margin-left: 0;
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-left: auto; /* empuja al extremo derecho */
-  gap: 16px;
+  align-items: center;
+  gap: 28px;
 }
 
 /* Barra de progreso */
 .level-progress {
-  width: 140px;
+  width: 240px;
   color: #fff;
   font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.level-progress span {
+  display: block;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
 }
 
 .progress-bar {
@@ -416,7 +448,9 @@ body {
 /* Iconos de logros */
 .profile-icons {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 8px;
 }
 
 .profile-icons .icon {
@@ -424,11 +458,11 @@ body {
   padding: 6px;
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .profile-icons .icon:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 /* Mini-avatar decorativo */
@@ -439,6 +473,11 @@ body {
   border: 2px solid rgba(255,255,255,0.1);
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  opacity: 0.85;
+}
+
+.avatar-mini:hover {
+  opacity: 1;
 }
 
 /* ======================================== PROFILE HERO =================================== */
