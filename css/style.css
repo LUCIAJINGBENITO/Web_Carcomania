@@ -1,9 +1,20 @@
+/* Tipografías */
+@font-face {
+  font-family: "Bootzy";
+  src: url("../media/fonts/BootzyTM.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #0f0f0f;
   --fg: #fff;
   --card_1: #b2b2b2;
   --card_2: #ce2017;
   --card_3: #2f2f2f;
+  --font-title: "Bootzy", sans-serif;
+  --font-body: "Poppins", sans-serif;
 }
 
 * {
@@ -16,7 +27,7 @@ body {
   margin: 0;
   background: #0e0e0e;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   cursor: none;
 }
 
@@ -932,6 +943,13 @@ button,
 .accessory-mini,
 .clickable {
   cursor: none !important; /* fuerza que no aparezca la mano */
+}
+
+/* Bootzy SOLO para títulos clave */
+.user-title,
+.user-area h3.hover-text {
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 
