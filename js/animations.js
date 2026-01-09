@@ -238,8 +238,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ===============================
-    FILTROS CATALOGO 
-  =============================== */
+     FILTROS Y ORDEN CATALOGO
+  ================================ */
   const categoryButtons = document.querySelectorAll('.category-filters button');
   const priceButtons = document.querySelectorAll('.price-filters button');
   const sortSelect = document.querySelector('.catalog-sort select');
@@ -247,85 +247,103 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let activeCategory = 'all';
   let activePrice = 'all';
+  let activeSort = 'default';
 
   function filterCards() {
     cards.forEach(card => {
       const cat = card.dataset.category;
       const price = parseFloat(card.dataset.price);
+      const isNew = card.dataset.new === 'true';
+      const isPopular = card.dataset.popular === 'true';
 
-      // Filtrar por categoría
-      const categoryMatch = activeCategory === 'all' || cat === activeCategory;
+      let categoryMatch = activeCategory === 'all' || cat === activeCategory;
 
-      // Filtrar por precio
       let priceMatch = true;
       if (activePrice !== 'all') {
-        if (activePrice === '20+') {
-          priceMatch = price > 20;
-        } else {
+        if (activePrice === '20+') priceMatch = price > 20;
+        else {
           const [min, max] = activePrice.split('-').map(Number);
           priceMatch = price >= min && price <= max;
         }
       }
 
-      card.style.display = categoryMatch && priceMatch ? 'flex' : 'none';
+      let sortMatch = true;
+      if (activeSort === 'new') sortMatch = isNew;
+      if (activeSort === 'popular') sortMatch = isPopular;
+
+      card.style.display = categoryMatch && priceMatch && sortMatch ? 'flex' : 'none';
     });
+
+    // Ordenar por precio asc/desc si corresponde
+    const grid = document.querySelector('.catalog-grid');
+    const visibleCards = Array.from(cards).filter(c => c.style.display !== 'none');
+
+    if (activeSort === 'price-asc') visibleCards.sort((a,b)=>parseFloat(a.dataset.price)-parseFloat(b.dataset.price));
+    if (activeSort === 'price-desc') visibleCards.sort((a,b)=>parseFloat(b.dataset.price)-parseFloat(a.dataset.price));
+
+    visibleCards.forEach(card => grid.appendChild(card));
   }
 
-  // ==========================
-  // FILTRO POR CATEGORÍA
-  // ==========================
+  // Filtrar por categoría
   categoryButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       activeCategory = btn.dataset.filter;
-
       categoryButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
       filterCards();
     });
   });
 
-  // ==========================
-  // FILTRO POR PRECIO
-  // ==========================
+  // Filtrar por precio
   priceButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       activePrice = btn.dataset.price;
-
       priceButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
       filterCards();
     });
   });
 
-  // ==========================
-  // ORDENAR POR PRECIO / NUEVOS / POPULARES
-  // ==========================
+  // Ordenar y filtrar por select
   if (sortSelect) {
     sortSelect.addEventListener('change', () => {
       const sortBy = sortSelect.value;
-      const grid = document.querySelector('.catalog-grid');
-      const cardsArray = Array.from(cards);
 
-      cardsArray.sort((a, b) => {
-        const priceA = parseFloat(a.dataset.price);
-        const priceB = parseFloat(b.dataset.price);
+      // Si seleccionamos “Nuevos” o “Populares”
+      if (sortBy === 'new' || sortBy === 'popular') {
+        const tag = sortBy; // 'new' o 'popular'
+        cards.forEach(card => {
+          // Convertimos el dataset a booleano para comparar
+          const isTag = card.dataset[tag] === 'true';
+          card.style.display = isTag ? 'flex' : 'none';
+        });
 
-        if (sortBy === 'price-asc') return priceA - priceB;
-        if (sortBy === 'price-desc') return priceB - priceA;
-        if (sortBy === 'new') return (b.dataset.new === 'true') - (a.dataset.new === 'true');
-        if (sortBy === 'popular') return (b.dataset.popular === 'true') - (a.dataset.popular === 'true');
+        // Reseteamos botones de categoría y precio
+        activeCategory = 'all';
+        activePrice = 'all';
+        categoryButtons.forEach(b => b.classList.remove('active'));
+        categoryButtons[0].classList.add('active');
+        priceButtons.forEach(b => b.classList.remove('active'));
+        priceButtons[0].classList.add('active');
 
-        return 0; // default
-      });
+      } else {
+        // Si no es “Nuevos/Populares”, filtramos normalmente
+        activeSort = sortBy;
+        filterCards();
 
-      cardsArray.forEach(card => grid.appendChild(card));
+        // Ordenar por precio si aplica
+        if (sortBy === 'price-asc' || sortBy === 'price-desc') {
+          const grid = document.querySelector('.catalog-grid');
+          const cardsArray = Array.from(cards);
+          cardsArray.sort((a, b) => {
+            const priceA = parseFloat(a.dataset.price);
+            const priceB = parseFloat(b.dataset.price);
+            return sortBy === 'price-asc' ? priceA - priceB : priceB - priceA;
+          });
+          cardsArray.forEach(card => grid.appendChild(card));
+        }
+      }
     });
   }
-
-  // Filtrar inicialmente
-  filterCards();
-
 
 });
