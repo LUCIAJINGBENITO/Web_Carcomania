@@ -238,30 +238,94 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ===============================
-     FILTROS CATALOGO
-  ================================ */
-  const filterButtons = document.querySelectorAll('.catalog-filters button');
-  const catalogCards = document.querySelectorAll('.catalog-card');
+    FILTROS CATALOGO 
+  =============================== */
+  const categoryButtons = document.querySelectorAll('.category-filters button');
+  const priceButtons = document.querySelectorAll('.price-filters button');
+  const sortSelect = document.querySelector('.catalog-sort select');
+  const cards = document.querySelectorAll('.catalog-card');
 
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const category = btn.dataset.filter;
+  let activeCategory = 'all';
+  let activePrice = 'all';
 
-      catalogCards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'flex'; // mostrar
+  function filterCards() {
+    cards.forEach(card => {
+      const cat = card.dataset.category;
+      const price = parseFloat(card.dataset.price);
+
+      // Filtrar por categoría
+      const categoryMatch = activeCategory === 'all' || cat === activeCategory;
+
+      // Filtrar por precio
+      let priceMatch = true;
+      if (activePrice !== 'all') {
+        if (activePrice === '20+') {
+          priceMatch = price > 20;
         } else {
-          card.style.display = 'none'; // ocultar
+          const [min, max] = activePrice.split('-').map(Number);
+          priceMatch = price >= min && price <= max;
         }
-      });
+      }
 
-      // Botón activo
-      filterButtons.forEach(b => b.classList.remove('active'));
+      card.style.display = categoryMatch && priceMatch ? 'flex' : 'none';
+    });
+  }
+
+  // ==========================
+  // FILTRO POR CATEGORÍA
+  // ==========================
+  categoryButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeCategory = btn.dataset.filter;
+
+      categoryButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+
+      filterCards();
     });
   });
 
-  
-  
+  // ==========================
+  // FILTRO POR PRECIO
+  // ==========================
+  priceButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activePrice = btn.dataset.price;
+
+      priceButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      filterCards();
+    });
+  });
+
+  // ==========================
+  // ORDENAR POR PRECIO / NUEVOS / POPULARES
+  // ==========================
+  if (sortSelect) {
+    sortSelect.addEventListener('change', () => {
+      const sortBy = sortSelect.value;
+      const grid = document.querySelector('.catalog-grid');
+      const cardsArray = Array.from(cards);
+
+      cardsArray.sort((a, b) => {
+        const priceA = parseFloat(a.dataset.price);
+        const priceB = parseFloat(b.dataset.price);
+
+        if (sortBy === 'price-asc') return priceA - priceB;
+        if (sortBy === 'price-desc') return priceB - priceA;
+        if (sortBy === 'new') return (b.dataset.new === 'true') - (a.dataset.new === 'true');
+        if (sortBy === 'popular') return (b.dataset.popular === 'true') - (a.dataset.popular === 'true');
+
+        return 0; // default
+      });
+
+      cardsArray.forEach(card => grid.appendChild(card));
+    });
+  }
+
+  // Filtrar inicialmente
+  filterCards();
+
 
 });
