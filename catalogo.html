@@ -28,13 +28,37 @@
                     </div>
                 </div>
             
-                <!-- Filtros por categoría -->
-                <div class="catalog-filters mb-4">
-                    <button data-filter="all">Todos</button>
-                    <button data-filter="stickers">Stickers</button>
-                    <button data-filter="llaveros">Llaveros</button>
-                    <button data-filter="fundas">Fundas</button>
-                    <button data-filter="accesorios">Accesorios</button>
+                <!-- FILTROS DEL CATÁLOGO -->
+                <div class="catalog-controls mb-4">
+
+                    <!-- CATEGORÍAS -->
+                    <div class="catalog-filters category-filters">
+                        <button data-filter="all" class="active">Todos</button>
+                        <button data-filter="stickers">Stickers</button>
+                        <button data-filter="llaveros">Llaveros</button>
+                        <button data-filter="fundas">Fundas</button>
+                        <button data-filter="accesorios">Accesorios</button>
+                    </div>
+                
+                    <!-- PRECIO -->
+                    <div class="catalog-filters price-filters">
+                        <button data-price="all" class="active">Todos</button>
+                        <button data-price="0-10">0–10€</button>
+                        <button data-price="10-20">10–20€</button>
+                        <button data-price="20+">20€+</button>
+                    </div>
+                
+                    <!-- ORDENAR -->
+                    <div class="catalog-sort">
+                        <select id="sort-products">
+                            <option value="default">Ordenar por</option>
+                            <option value="price-asc">Precio ↑</option>
+                            <option value="price-desc">Precio ↓</option>
+                            <option value="new">Nuevos</option>
+                            <option value="popular">Populares</option>
+                        </select>
+                    </div>
+                
                 </div>
             
                 <!-- Grid de productos -->
@@ -77,204 +101,6 @@
                     <div class="catalog-card" data-category="stickers">
                         <div class="position-relative">
                             <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="media/img/Almendro en flor.jpg" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d" alt="Funda Carbon">
-                            <span class="catalog-badge badge-new">Nuevo</span>
-                        </div>
-                        <h3>Sticker “Galaxy”</h3>
-                        <p class="catalog-desc">Sticker vinílico de alta calidad, resistente al agua</p>
-                        <p>$5.99</p>
-                        <button class="btn-edit">Agregar al carrito</button>
-                    </div>
-
-                    <div class="catalog-card" data-category="stickers">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d" alt="Funda Carbon">
                             <span class="catalog-badge badge-new">Nuevo</span>
                         </div>
                         <h3>Sticker “Galaxy”</h3>
