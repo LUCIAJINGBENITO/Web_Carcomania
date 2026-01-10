@@ -913,23 +913,6 @@ body {
   margin: 0;
 }
 
-/* Botón agregar al carrito */
-.catalog-area .catalog-card .btn-edit {
-  margin-top: 8px;
-  width: 100%;
-  text-align: center;
-  font-size: 0.95rem;
-  padding: 6px 0;
-  transition: all 0.3s ease;
-}
-
-.catalog-area .catalog-card .btn-edit:hover {
-  background: linear-gradient(135deg, #7BC1CF, #d4af37);
-  color: #000;
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 16px rgba(123,193,207,0.5);
-}
-
 /* BADGES */
 .catalog-area .catalog-badge {
   position: absolute;
@@ -978,6 +961,55 @@ body {
   font-size: 0.9rem;
   color: rgba(255,255,255,0.6);
   margin: 0;
+}
+
+.catalog-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+/* Botón agregar al carrito */
+.catalog-area .catalog-card .btn-edit {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  transition: all 0.3s ease;
+}
+
+.catalog-area .catalog-card .btn-edit:hover {
+  background: linear-gradient(135deg, #7BC1CF, #d4af37);
+  color: #000;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(123,193,207,0.5);
+}
+
+.btn-details {
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(123,193,207,0.6);
+  color: #fff;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-details:hover {
+  background: linear-gradient(135deg, #7BC1CF, #d4af37);
+  color: #000;
+  box-shadow: 0 4px 12px rgba(123,193,207,0.5);
+  transform: translateY(-2px);
+}
+
+.catalog-actions .btn-edit,
+.catalog-actions .btn-details {
+  flex: 1;
 }
 
 button,
