@@ -310,38 +310,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const sortBy = sortSelect.value;
 
       // Si seleccionamos “Nuevos” o “Populares”
-      if (sortBy === 'new' || sortBy === 'popular') {
-        const tag = sortBy; // 'new' o 'popular'
-        cards.forEach(card => {
-          // Convertimos el dataset a booleano para comparar
-          const isTag = card.dataset[tag] === 'true';
-          card.style.display = isTag ? 'flex' : 'none';
+      if (sortSelect) {
+        sortSelect.addEventListener('change', () => {
+          activeSort = sortSelect.value;
+          filterCards();
         });
-
-        // Reseteamos botones de categoría y precio
-        activeCategory = 'all';
-        activePrice = 'all';
-        categoryButtons.forEach(b => b.classList.remove('active'));
-        categoryButtons[0].classList.add('active');
-        priceButtons.forEach(b => b.classList.remove('active'));
-        priceButtons[0].classList.add('active');
-
-      } else {
-        // Si no es “Nuevos/Populares”, filtramos normalmente
-        activeSort = sortBy;
-        filterCards();
-
-        // Ordenar por precio si aplica
-        if (sortBy === 'price-asc' || sortBy === 'price-desc') {
-          const grid = document.querySelector('.catalog-grid');
-          const cardsArray = Array.from(cards);
-          cardsArray.sort((a, b) => {
-            const priceA = parseFloat(a.dataset.price);
-            const priceB = parseFloat(b.dataset.price);
-            return sortBy === 'price-asc' ? priceA - priceB : priceB - priceA;
-          });
-          cardsArray.forEach(card => grid.appendChild(card));
-        }
       }
     });
   }
