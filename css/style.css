@@ -7,17 +7,18 @@
 /* Variables de color */
 :root{
   --white: #fff;
-  --gradient-text: (90deg, #3F0043, #56579C);
-  --darkpurple: ( #3F0043);
-  --lightpurple: ( #56579C);
+  --gradient-text: linear-gradient(90deg, #3F0043, #56579C);
+  --darkpurple: #3F0043;
+  --lightpurple: #56579C;
+  --lilac: #EAD5F3;
 }
+
 
 body {
     margin: 0;
     background: #0e0e0e;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
 }
 
 /* Tipografías */
@@ -145,6 +146,10 @@ body {
   width: 36px;
   height: 36px;
   padding: 4px;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
 }
 
 /* === MENÚ CENTRADO === */
@@ -367,18 +372,19 @@ body {
    HERO HOME
 ================================ */
 
+/* ===============================
+   HERO HOME
+================================ */
+
 .carco-hero {
   position: relative;
-  isolation: isolate;
   min-height: 100vh;
   background: #000;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 1rem 4rem;
-  padding-top: 7.5rem; 
-  padding-bottom: 4rem;
+  padding-top: 7rem;
+  overflow: hidden;
 }
 
 /* Palabra gigante fondo */
@@ -389,36 +395,34 @@ body {
   transform: translate(-50%, -50%);
   font-family: "Bootzy", sans-serif;
   font-size: clamp(6rem, 20vw, 22rem);
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.12);
   white-space: nowrap;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
 /* Contenido */
 .carco-hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 5;
   text-align: center;
 }
 
 /* Imagen coche */
 .carco-hero-car img {
+  width: 700px;
   max-width: 100%;
-  width: 680px;
-  height: auto;
   filter: drop-shadow(0 30px 60px rgba(123, 47, 247, 0.45));
 }
 
 /* Lema */
 .carco-hero-tagline {
   margin-top: 2rem;
-  font-size: 1.1rem;
-  max-width: 620px;
+  font-size: 1.2rem;
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
-  color: rgba(255, 255, 255, 0.85);
+  color: #EAD5F3;
   line-height: 1.6;
 }
 
@@ -428,15 +432,14 @@ body {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .carco-btn-primary,
 .carco-btn-secondary {
-  padding: 0.8rem 1.8rem;
+  padding: 0.9rem 2rem;
   border-radius: 999px;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 600;
   text-decoration: none;
@@ -461,7 +464,7 @@ body {
 }
 
 .carco-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
 
@@ -475,8 +478,9 @@ body {
   height: 60%;
   background: radial-gradient(circle, rgba(123,47,247,0.45), transparent 70%);
   filter: blur(80px);
-  z-index: 1;
+  z-index: 2;
 }
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -484,14 +488,12 @@ body {
     padding-top: 4rem;
   }
 
-  .carco-hero-tagline {
-    font-size: 1rem;
-  }
+  
 }
 
+/* Termina el contenido  */
 
-
-/* Termina la HOME  */
+/* ----- Termina la HOME ----- */
 
 /* empieza el footer  */
 footer {
@@ -553,7 +555,7 @@ footer {
   margin-right: 15px;
   margin-bottom: 10px;
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.238);
+  background: rgba(255, 255, 255, 0);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.5px);
@@ -566,7 +568,7 @@ footer {
   margin-right: 15px;
   padding: 10px;
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.573);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.5px);
