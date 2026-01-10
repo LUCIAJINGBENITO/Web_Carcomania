@@ -369,12 +369,14 @@ body {
 /* Empieza la HOME  */
 
 /* ==== EFECTO DE PULSO RADIAL EN EL FONDO ==== */
+
+
 .parallax-hero::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: radial-gradient(circle, #000000 20%, #56579cae 50%, #3f0043d3 80%);
+  background: radial-gradient(circle, #000000 30%, #56579cae 50%, #3f0043d3 70%);
   
 
   background-position: center center;  
@@ -400,13 +402,15 @@ body {
   }
 }
 
+
+
 /* ===============================
    HERO HOME
 ================================ */
 
 .carco-hero {
   position: relative;
-  min-height: 93vh;
+  min-height: 91vh;
   background: #000;
   display: flex;
   align-items: center;
@@ -450,7 +454,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   color: white;
-  line-height: 1.6;
+  line-height: 1;
 }
 
 /* Botones */
@@ -460,6 +464,8 @@ body {
   gap: 1rem;
   justify-content: center;
 }
+
+
 
 .carco-btn-primary,
 .carco-btn-secondary {
@@ -529,24 +535,102 @@ body {
     padding-top: 0.2rem;
     padding-right: 1rem;
     padding-left: 1rem;
-    min-height: 70vh;
+    min-height: 91vh;
   }
 
   .carco-hero-bg {
-    top: 25%;
+    top: 30%;
   }
 
   .carco-hero-car img {
     width: 500px;
     max-width: 100%;
   }
-
   
+}
+
+@media (max-width: 600px) {
+  .carco-hero-actions {
+    flex-direction: column;  
+    align-items: center;      
+    width: 100%;
+  }
+
+  .carco-hero-actions a {
+    width: 80%;               
+    text-align: center;
+  }
+  
+  .carco-hero-bg {
+    top: 25%;
+  }
 }
 
 /* Termina el contenido  */
 
 /* ----- Termina la HOME ----- */
+
+/* ============================
+   CARROUSEL COMUNIDAD
+============================ */
+
+.carrousel-comunidad-title {
+    font-size: 2rem;
+    color: var(--lilac);
+}
+
+/* Contenedor del carrusel */
+.carrousel-comunidad {
+    position: relative;
+}
+
+/* Imágenes */
+.carrousel-comunidad-img {
+    object-fit: cover;
+    height: 420px;
+    border-radius: 20px;
+}
+
+/* Indicadores */
+.carrousel-comunidad-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.6);
+}
+
+.carrousel-comunidad-indicators .active {
+    background-color: var(--lightpurple);
+}
+
+/* Botón inferior */
+.carrousel-comunidad-btn {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    background: var(--gradient-text);
+    color: white;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(123, 47, 247, 0.5);
+    transition: 0.25s ease;
+}
+
+.carrousel-comunidad-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(123, 47, 247, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carrousel-comunidad-img {
+        height: 260px;
+    }
+}
+
+/* ---- Termina el Carrousel ---- */
 
 /* empieza el footer  */
 footer {
