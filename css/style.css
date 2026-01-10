@@ -368,9 +368,37 @@ body {
 
 /* Empieza la HOME  */
 
-/* ===============================
-   HERO HOME
-================================ */
+/* ==== EFECTO DE PULSO RADIAL EN EL FONDO ==== */
+.parallax-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle, #000000 20%, #56579cae 50%, #3f0043d3 80%);
+  
+
+  background-position: center center;  
+  background-repeat: no-repeat;
+  background-size: 140% 140%;      
+  
+  animation: pulseRadial 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseRadial {
+  0% {
+    background-size: 120% 120%;
+    opacity: 0.55;
+  }
+  50% {
+    background-size: 200% 200%;
+    opacity: 0.9;
+  }
+  100% {
+    background-size: 120% 120%;
+    opacity: 0.55;
+  }
+}
 
 /* ===============================
    HERO HOME
@@ -378,24 +406,24 @@ body {
 
 .carco-hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 93vh;
   background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 7rem;
+  padding-top: 0.5rem;
   overflow: hidden;
 }
 
 /* Palabra gigante fondo */
 .carco-hero-bg {
   position: absolute;
-  top: 50%;
+  top: 33%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Bootzy", sans-serif;
   font-size: clamp(6rem, 20vw, 22rem);
-  color: rgba(255, 255, 255, 0.12);
+  color: var(--lilac);
   white-space: nowrap;
   z-index: 1;
   pointer-events: none;
@@ -412,7 +440,6 @@ body {
 .carco-hero-car img {
   width: 700px;
   max-width: 100%;
-  filter: drop-shadow(0 30px 60px rgba(123, 47, 247, 0.45));
 }
 
 /* Lema */
@@ -422,7 +449,7 @@ body {
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
-  color: #EAD5F3;
+  color: white;
   line-height: 1.6;
 }
 
@@ -447,7 +474,7 @@ body {
 }
 
 .carco-btn-primary {
-  background: linear-gradient(135deg, #ff6a88, #7b2ff7);
+  background: var(--gradient-text);
   color: #fff;
   box-shadow: 0 0 24px rgba(123, 47, 247, 0.6);
 }
@@ -458,9 +485,13 @@ body {
 }
 
 .carco-btn-secondary {
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: #fff;
-  background: transparent;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  color: white;
 }
 
 .carco-btn-secondary:hover {
@@ -471,21 +502,43 @@ body {
 /* Glow inferior */
 .carco-hero-glow {
   position: absolute;
-  bottom: -30%;
+  bottom: -25%;
   left: 50%;
   transform: translateX(-50%);
-  width: 120%;
-  height: 60%;
-  background: radial-gradient(circle, rgba(123,47,247,0.45), transparent 70%);
+  width: 150%;
+  height: 120%;
+  background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 1) 0%,          /* centro negro */
+      rgba(0, 0, 0, 0.9) 20%,       /* transición suave */
+      rgba(90, 0, 140, 0.45) 55%,   /* morado medio */
+      rgba(140, 60, 255, 0.35) 75%, /* morado claro */
+      rgba(0, 0, 0, 0) 100%         /* desvanecimiento */
+  );
   filter: blur(80px);
-  z-index: 2;
+  z-index: 0;
+  pointer-events: none;
 }
 
 
+
+
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 990px) {
   .carco-hero {
-    padding-top: 4rem;
+    padding-top: 0.2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    min-height: 70vh;
+  }
+
+  .carco-hero-bg {
+    top: 25%;
+  }
+
+  .carco-hero-car img {
+    width: 500px;
+    max-width: 100%;
   }
 
   
@@ -554,9 +607,8 @@ footer {
   padding: 10px;
   margin-right: 15px;
   margin-bottom: 10px;
-  /* From https://css.glass */
   background: rgba(255, 255, 255, 0);
-  border-radius: 16px;
+  border-radius: 50px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.5px);
   -webkit-backdrop-filter: blur(6.5px);
@@ -567,9 +619,8 @@ footer {
 .footer-section button {
   margin-right: 15px;
   padding: 10px;
-  /* From https://css.glass */
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
+  border-radius: 50px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.5px);
   -webkit-backdrop-filter: blur(6.5px);
