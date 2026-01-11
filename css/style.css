@@ -805,7 +805,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
 }
 
 .catalog-area .catalog-filters button {
@@ -1051,7 +1051,7 @@ body {
 .product-title {
   font-family: var(--font-title);
   font-size: clamp(3rem, 6vw, 4.5rem);
-  letter-spacing: -0.04em;
+  letter-spacing: 0.08em;
   margin-bottom: 16px;
   background: linear-gradient(90deg, #7BC1CF, #d4af37);
   -webkit-background-clip: text;
@@ -1097,6 +1097,60 @@ body {
   box-shadow: 0 4px 12px rgba(123,193,207,0.5);
   transform: translateY(-2px);
 }
+
+/* Info del producto */
+.product-details {
+  max-width: 520px;
+  margin: 80px auto 0;
+}
+
+.product-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 48px;
+}
+
+.product-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.spec-label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 6px;
+}
+
+.spec-value {
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 80px;
+}
+
+.product-footer .back-link {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.product-footer .back-link:hover {
+  color: #7BC1CF;
+  transform: translateX(-4px);
+}
+
 
 button,
 .btn-edit,
