@@ -1012,6 +1012,92 @@ body {
   flex: 1;
 }
 
+/* ================= PRODUCT PREMIUM ================= */
+
+.product-area.premium {
+  background: #0f0f0f;
+}
+
+.product-hero {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.product-image-frame {
+  position: relative;
+  border-radius: 40px;
+  overflow: hidden; /* CLAVE */
+}
+
+.product-image-frame img {
+  width: 100%;
+  display: block;
+}
+
+/* Reutiliza el mismo patrón del catálogo */
+.product-image-frame .product-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+}
+
+.product-meta {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.product-title {
+  font-family: var(--font-title);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  letter-spacing: -0.04em;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, #7BC1CF, #d4af37);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.product-tagline {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.product-tagline span {
+  display: block;
+  opacity: 0.6;
+  margin-top: 6px;
+}
+
+.product-price {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 32px;
+}
+
+.btn-edit.btn-product {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(123,193,207,0.6);
+  color: #fff;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 15px 40px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-edit.btn-product:hover {
+  background: linear-gradient(135deg, #7BC1CF, #d4af37);
+  color: #000;
+  box-shadow: 0 4px 12px rgba(123,193,207,0.5);
+  transform: translateY(-2px);
+}
+
 button,
 .btn-edit,
 .panel-header,
