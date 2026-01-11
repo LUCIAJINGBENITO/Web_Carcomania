@@ -89,3 +89,37 @@ gsap.utils.toArray(".nos-img").forEach((img, i) => {
   });
 });
 
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Animación de entrada al hacer scroll
+gsap.from(".nitro-photo", {
+  opacity: 0,
+  y: 100,
+  rotate: -5,
+  scale: 0.9,
+  stagger: 0.2,
+  duration: 1.2,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: ".nitro-gallery",
+    start: "top 80%",
+    toggleActions: "play none none none"
+  }
+});
+
+// Movimiento sutil tipo parallax mientras haces scroll
+gsap.utils.toArray(".nitro-photo").forEach((photo) => {
+  gsap.to(photo, {
+    y: -20,
+    ease: "none",
+    scrollTrigger: {
+      trigger: photo,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true
+    }
+  });
+});
+
