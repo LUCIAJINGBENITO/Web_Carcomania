@@ -319,4 +319,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* ===============================
+     ACORDEON DESCRIPCIÓN EXTENDIDA
+  ================================ */
+  const toggles = document.querySelectorAll(".accordion-toggle");
+
+  toggles.forEach(toggle => {
+    const arrow = toggle.querySelector(".arrow-icon"); // seleccionamos la flecha
+    const text = toggle.querySelector(".accordion-text"); // el texto si quieres manejarlo separado
+
+    toggle.addEventListener("click", () => {
+      const content = toggle.nextElementSibling;
+      const isOpen = content.style.maxHeight;
+
+      if (isOpen) {
+        // cerrar
+        content.style.maxHeight = null;
+        gsap.to(arrow, { rotation: 0, duration: 0.35, ease: "power2.inOut" });
+      } else {
+        // abrir
+        content.style.maxHeight = content.scrollHeight + "px";
+        gsap.to(arrow, { rotation: 180, duration: 0.35, ease: "power2.inOut" });
+      }
+    });
+  });
+
+
+
 });

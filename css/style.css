@@ -1086,7 +1086,7 @@ body {
   text-align: center;
   font-size: 0.95rem;
   font-weight: 700;
-  padding: 15px 40px;
+  padding: 10px 40px;
   border-radius: 50px;
   transition: all 0.3s ease;
 }
@@ -1136,6 +1136,55 @@ body {
   justify-content: flex-end;
   margin-top: 80px;
 }
+
+/* ================= Descripción extendida ================= */
+.product-extended {
+  max-width: 520px;
+  margin: 40px auto 0;
+}
+
+.accordion-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* separa texto y flecha */
+  align-items: center;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border: 1px solid rgba(123,193,207,0.6);
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.accordion-toggle:hover {
+  background: rgba(123,193,207,0.2);
+}
+
+.accordion-toggle .arrow-icon {
+  margin-left: 10px; /* espacio con el texto */
+  transition: transform 0.35s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  margin-top: 12px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 0 20px;
+}
+
+.accordion-content p {
+  margin: 12px 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.75);
+}
+
 
 .product-footer .back-link {
   font-size: 0.75rem;
