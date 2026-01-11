@@ -60,7 +60,7 @@ gsap.to(".nos-img", {
     scrub: true
   },
   y: -35,
-  x: 40,
+  x: 45,
   scale: 0.95,
   ease: "power2.out"
 });
