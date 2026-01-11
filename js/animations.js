@@ -123,3 +123,20 @@ gsap.utils.toArray(".nitro-photo").forEach((photo) => {
   });
 });
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const carousels = document.querySelectorAll(".novedad-carousel");
+
+  carousels.forEach((carousel) => {
+    const images = carousel.querySelectorAll("img");
+    let index = 0;
+
+    images[index].classList.add("active");
+
+    setInterval(() => {
+      images[index].classList.remove("active");
+      index = (index + 1) % images.length;
+      images[index].classList.add("active");
+    }, 3000);
+  });
+});
