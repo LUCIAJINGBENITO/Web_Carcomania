@@ -1415,12 +1415,14 @@ body {
   margin: 12px 0;
 }
 
-
 button,
 .btn-edit,
 .panel-header,
 .accessory-mini,
-.clickable {
+.clickable,
+.catalog-card, 
+.related-card, 
+.highlight-card {
   cursor: none !important; /* fuerza que no aparezca la mano */
 }
 
