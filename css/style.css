@@ -736,12 +736,12 @@ body {
 
 .carco-reco-bgword {
     position: absolute;
-    top: 40%; /* ajusta la altura del texto decorativo */
+    top: 15%; /* ajusta la altura del texto decorativo */
     left: 50%;
     transform: translate(-50%, -50%) rotate(-4deg);
     font-family: "Bootzy", sans-serif;
-    font-size: clamp(5rem, 22vw, 18rem);
-    color: rgba(255, 255, 255, 0.05);
+    font-size: clamp(5rem, 12vw, 18rem);
+    color: rgb(40, 40, 40);
     white-space: nowrap;
     pointer-events: none;
     z-index: 0;
