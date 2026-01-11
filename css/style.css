@@ -852,6 +852,13 @@ body {
   opacity: 1;
 }
 
+.novedades-title{
+    font-family: 'Bootzy', sans-serif; 
+    letter-spacing: 2px;
+    font-size: 40px;
+    margin-bottom: 55px;
+}
+
 .novedad-bloque p {
   font-size: 1rem;
   color: #ccc;
@@ -867,15 +874,18 @@ body {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   backdrop-filter: blur(6px);
-  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  box-shadow: 0 0 20px rgba(124, 53, 255, 0.7);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .novedad-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
+  transform: translateY(-1px) scale(1.05);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 20px rgba(124, 53, 255, 0.7);
+  background: radial-gradient(circle at 0% 0%, rgba(255, 106, 136, 0.2), rgba(15, 10, 28, 1));
 }
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(40px); }
