@@ -129,62 +129,145 @@
         <!------ Acaba la cabecera  ------>
 
         <!------ Empieza el carrousel  ------>
-        <!-- SECCIÓN: Lo más comprado de la comunidad -->
-        <section class="carrousel-comunidad-section container py-5">
+<section class="carrousel-comunidad-section container py-5 position-relative">
 
-            <!-- Título central -->
-            <h2 class="carrousel-comunidad-title text-center mb-4 fw-bold">
-                Lo más comprado de la comunidad
-            </h2>
+    <!-- Texto gigante decorativo -->
+    <h1 class="carrousel-comunidad-bg">Inspirate</h1>
 
-            <!-- Carrusel personalizado -->
-            <div id="carrouselComunidad" class="carousel slide carrousel-comunidad" data-bs-ride="carousel">
+    <!-- Título central -->
+    <h2 class="carrousel-comunidad-title text-center mb-5 ">
+        Lo más comprado de la comunidad
+    </h2>
+
+    <!-- GRID DE DOS CARRUSELES -->
+    <div class="row g-4 justify-content-center">
+
+        <!-- Carrusel 1 -->
+        <div class="col-lg-6 col-md-12">
+            <div id="carrouselComunidad1" class="carousel slide carrousel-comunidad" data-bs-ride="carousel">
 
                 <!-- Indicadores -->
                 <div class="carousel-indicators carrousel-comunidad-indicators">
-                    <button type="button" data-bs-target="#carrouselComunidad" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#carrouselComunidad" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#carrouselComunidad" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#carrouselComunidad1" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carrouselComunidad1" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carrouselComunidad1" data-bs-slide-to="2"></button>
                 </div>
 
                 <!-- Slides -->
                 <div class="carousel-inner carrousel-comunidad-inner rounded-4 shadow-lg">
 
                     <div class="carousel-item active carrousel-comunidad-item">
-                        <img src="media/img/carrusel1.webp" class="d-block w-100 carrousel-comunidad-img" alt="Producto 1">
+                        <img src="media/img/carrusel1.webp" class="d-block w-100 carrousel-comunidad-img">
+
+                        <div class="carrousel-comunidad-caption">
+                            <h3>Interior Rosa Deluxe</h3>
+                            <p>El estilo más comprado por la comunidad</p>
+                        </div>
                     </div>
 
                     <div class="carousel-item carrousel-comunidad-item">
-                        <img src="media/img/carrusel2.webp" class="d-block w-100 carrousel-comunidad-img" alt="Producto 2">
+                        <img src="media/img/carrusel4.webp" class="d-block w-100 carrousel-comunidad-img">
+
+                        <div class="carrousel-comunidad-caption">
+                            <h3>Decoración Premium</h3>
+                            <p>Accesorios exclusivos para tu coche</p>
+                        </div>
                     </div>
 
                     <div class="carousel-item carrousel-comunidad-item">
-                        <img src="media/img/carrusel3.webp" class="d-block w-100 carrousel-comunidad-img" alt="Producto 3">
+                        <img src="media/img/carrusel3.webp" class="d-block w-100 carrousel-comunidad-img">
+
+                        <div class="carrousel-comunidad-caption">
+                            <h3>Estilo Urban Glow</h3>
+                            <p>La tendencia favorita del mes</p>
+                        </div>
                     </div>
 
                 </div>
 
                 <!-- Controles -->
-                <button class="carousel-control-prev carrousel-comunidad-prev" type="button" data-bs-target="#carrouselComunidad" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrouselComunidad1" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </button>
 
-                <button class="carousel-control-next carrousel-comunidad-next" type="button" data-bs-target="#carrouselComunidad" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carrouselComunidad1" data-bs-slide="next">
                     <span class="carousel-control-next-icon"></span>
                 </button>
 
             </div>
 
-            <!-- Botón debajo del carrusel -->
-            <div class="text-center mt-4">
-                <a href="#" class="carrousel-comunidad-btn">
-                    Ver más
-                </a>
+            <!-- Botón 1 -->
+            <div class="text-center mt-3">
+                <a href="#" class="btn-comunidad-primary">Unirse a la comunidad</a>
+            </div>
+        </div>
+
+        <!-- Carrusel 2 -->
+        <div class="col-lg-6 col-md-12">
+            <div id="carrouselComunidad2" class="carousel slide carrousel-comunidad" data-bs-ride="carousel">
+
+                <!-- Indicadores -->
+                <div class="carousel-indicators carrousel-comunidad-indicators">
+                    <button type="button" data-bs-target="#carrouselComunidad2" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carrouselComunidad2" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carrouselComunidad2" data-bs-slide-to="2"></button>
+                </div>
+
+                <!-- Slides -->
+                <div class="carousel-inner carrousel-comunidad-inner rounded-4 shadow-lg">
+
+                    <div class="carousel-item active carrousel-comunidad-item">
+                        <img src="media/img/carrusel5.webp" class="d-block w-100 carrousel-comunidad-img">
+
+                        <div class="carrousel-comunidad-caption">
+                            <h3>Interior Floral</h3>
+                            <p>Detalles únicos para tu coche</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item carrousel-comunidad-item">
+                        <img src="media/img/carrusel8.webp" class="d-block w-100 carrousel-comunidad-img">
+
+                        <div class="carrousel-comunidad-caption">
+                            <h3>Pink Aesthetic</h3>
+                            <p>El estilo más cute del momento</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item carrousel-comunidad-item">
+                        <img src="media/img/carrusel6.webp" class="d-block w-100 carrousel-comunidad-img">
+
+                        <div class="carrousel-comunidad-caption">
+                            <h3>Minimal Glow</h3>
+                            <p>Elegancia y personalidad</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Controles -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrouselComunidad2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carrouselComunidad2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
             </div>
 
-        </section>
+            <!-- Botón 2 -->
+            <div class="text-center mt-3">
+                <a href="#" class="btn-comunidad-secondary">Descubrir más</a>
+            </div>
+        </div>
 
-        <!------ Acaba el carrousel  ------>
+    </div>
+
+</section>
+<!------ Acaba el carrousel  ------>
+
+
 
         <!------ Empieza el footer  ------>
         <footer>

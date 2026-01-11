@@ -574,14 +574,33 @@ body {
    CARROUSEL COMUNIDAD
 ============================ */
 
-.carrousel-comunidad-title {
-    font-size: 2rem;
-    color: var(--lilac);
+/* Texto gigante decorativo */
+.carrousel-comunidad-bg {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Bootzy", sans-serif;
+    font-size: clamp(4rem, 18vw, 20rem);
+    color: rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
 }
 
-/* Contenedor del carrusel */
+/* Título principal */
+.carrousel-comunidad-title {
+    font-family: "Bootzy", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--lilac);
+    position: relative;
+    z-index: 5;
+}
+
+/* Carrusel */
 .carrousel-comunidad {
     position: relative;
+    z-index: 5;
 }
 
 /* Imágenes */
@@ -591,20 +610,52 @@ body {
     border-radius: 20px;
 }
 
-/* Indicadores */
+/* Texto dentro del carrusel */
+.carrousel-comunidad-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+    width: 90%;
+    padding: 1rem 1.5rem;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    border-radius: 16px;
+}
+
+.carrousel-comunidad-caption h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.carrousel-comunidad-caption p {
+    margin: 0.3rem 0 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Indicadores rectangulares */
 .carrousel-comunidad-indicators button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,0.6);
+    width: 28px;
+    height: 8px;
+    border-radius: 6px;
+    background-color: rgba(255,255,255,0.45);
+    border: none;
+    margin: 0 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .carrousel-comunidad-indicators .active {
     background-color: var(--lightpurple);
+    transform: scale(1.15);
 }
 
-/* Botón inferior */
-.carrousel-comunidad-btn {
+/* Botón degradado */
+.btn-comunidad-primary {
     display: inline-block;
     padding: 0.9rem 2.2rem;
     background: var(--gradient-text);
@@ -618,9 +669,32 @@ body {
     transition: 0.25s ease;
 }
 
-.carrousel-comunidad-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(123, 47, 247, 0.8);
+.btn-comunidad-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 35px rgba(123, 47, 247, 0.9);
+}
+
+/* Botón bordeado */
+.btn-comunidad-secondary {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    background: transparent;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.39);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    text-decoration: none;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    transition: 0.25s ease;
+}
+
+.btn-comunidad-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
 }
 
 /* Responsive */
@@ -628,7 +702,13 @@ body {
     .carrousel-comunidad-img {
         height: 260px;
     }
+
+    .carrousel-comunidad-bg {
+        top: 10%;
+        font-size: clamp(3rem, 22vw, 12rem);
+    }
 }
+
 
 /* ---- Termina el Carrousel ---- */
 
