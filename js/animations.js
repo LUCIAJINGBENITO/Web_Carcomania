@@ -344,6 +344,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  document.querySelectorAll(".related-card").forEach(card => {
+    const img = card.querySelector("img");
+
+    card.addEventListener("mousemove", e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width/2;
+      const y = e.clientY - rect.top - rect.height/2;
+
+      gsap.to(card, { rotationX: -y*0.05, rotationY: x*0.05, duration: 0.3, ease: "power2.out" });
+      gsap.to(img, { x: x*0.03, y: y*0.03, duration: 0.3, ease: "power2.out" });
+    });
+
+    card.addEventListener("mouseleave", () => {
+      gsap.to(card, { rotationX: 0, rotationY: 0, duration: 0.3, ease: "power2.out" });
+      gsap.to(img, { x: 0, y: 0, duration: 0.3, ease: "power2.out" });
+    });
+  });
 
 
 });

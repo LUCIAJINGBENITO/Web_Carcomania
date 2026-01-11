@@ -1232,6 +1232,120 @@ body {
   font-size: 1.2rem;
 }
 
+/* ================= Recomendaciones ================= */
+.related-products {
+  max-width: 1080px;
+  margin: 60px auto;
+}
+
+.related-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+  color: #fff;
+  text-align: center;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+}
+
+.related-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid rgba(123,193,207,0.6);
+}
+
+.related-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(123,193,207,0.4);
+}
+
+.related-img-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.related-img-frame img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.related-card:hover .related-img-frame img {
+  transform: scale(1.05);
+}
+
+/* Botón añadir al carrito flotante */
+.btn-hover-cart {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #7BC1CF, #d4af37);
+  border: none;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.related-card:hover .btn-hover-cart {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Badges de producto */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.badge.nuevo {
+  background: #7BC1CF;
+}
+
+.badge.premium {
+  background: #d4af37;
+}
+
+/* Meta del producto */
+.related-meta {
+  padding: 12px 8px;
+}
+
+.related-name {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.related-price {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
 
 
 button,
