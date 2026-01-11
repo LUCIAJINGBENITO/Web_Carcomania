@@ -662,7 +662,7 @@ body {
     color: white;
     border-radius: 50px;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     font-weight: 600;
     text-decoration: none;
     box-shadow: 0 0 20px rgba(123, 47, 247, 0.5);
@@ -683,7 +683,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.39);
     color: white;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     font-weight: 600;
     text-decoration: none;
     backdrop-filter: blur(7px);
@@ -727,6 +727,35 @@ body {
     opacity: 0.8;
     margin-top: -10px;
 }
+
+/* ===== TEXTO GIGANTE DECORATIVO EN RECOMENDACIONES ===== */
+.carco-reco-section {
+    position: relative;
+    overflow: hidden; /* evita scroll horizontal y recorta el texto gigante */
+}
+
+.carco-reco-bgword {
+    position: absolute;
+    top: 40%; /* ajusta la altura del texto decorativo */
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-4deg);
+    font-family: "Bootzy", sans-serif;
+    font-size: clamp(5rem, 22vw, 18rem);
+    color: rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    width: max-content; /* permite que sea enorme sin romper el layout */
+}
+
+/* Asegura que el contenido esté por encima del texto decorativo */
+.carco-reco-title,
+.carco-reco-subtitle,
+.carco-reco-card {
+    position: relative;
+    z-index: 5;
+}
+
 
 /* CARD estilo imagen adjunta */
 .carco-reco-card {
@@ -796,6 +825,79 @@ body {
 }
 
 /* Termina las recomendaciones  */
+
+/* ============================
+   SECCIÓN PROMOCIONAL
+============================ */
+
+.carco-promo-section {
+    max-width: 80000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.carco-promo-text {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin-bottom: 1rem;
+}
+
+.carco-promo-discount {
+  font-family: "Bootzy", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+/* Código FORYOU10 */
+.carco-promo-code-wrapper {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.199);
+  padding: 0.2rem 1.6rem;
+  border-radius: 12px;
+  transform: rotate(-2deg);
+  margin-bottom: 1.5rem;
+}
+
+.carco-promo-code {
+  font-family: "Bootzy", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 4rem);
+  letter-spacing: 0.08em;
+  color: white;
+}
+
+/* Texto inferior */
+.carco-promo-subtext {
+  font-size: 1rem;
+  opacity: 0.75;
+  line-height: 1.5;
+}
+
+/* Texto decorativo gigante */
+.carco-promo-bgword {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-4deg);
+  font-family: "Bootzy", sans-serif;
+  font-size: clamp(5rem, 12vw, 18rem);
+  color: rgb(40, 40, 40);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: -1;
+  width: max-content;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .carco-promo-code-wrapper {
+    padding: 0.5rem 1.4rem;
+    transform: rotate(-1.5deg);
+  }
+}
+/* termina la sección de promoción  */
 
 /* empieza el footer  */
 footer {
