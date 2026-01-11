@@ -344,6 +344,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* ===============================
+     NUEVO JS: Productos relacionados
+  ================================ */
   document.querySelectorAll(".related-card").forEach(card => {
     const img = card.querySelector("img");
 
@@ -359,6 +362,30 @@ document.addEventListener("DOMContentLoaded", () => {
     card.addEventListener("mouseleave", () => {
       gsap.to(card, { rotationX: 0, rotationY: 0, duration: 0.3, ease: "power2.out" });
       gsap.to(img, { x: 0, y: 0, duration: 0.3, ease: "power2.out" });
+    });
+  });
+
+  /* ===============================
+    ACORDEON FAQ / INFORMACIÓN ADICIONAL
+  =============================== */
+  const faqToggles = document.querySelectorAll(".faq-toggle");
+
+  faqToggles.forEach(toggle => {
+    const arrow = toggle.querySelector(".arrow-icon");
+    const content = toggle.nextElementSibling;
+
+    toggle.addEventListener("click", () => {
+      const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+
+      if (isOpen) {
+        // cerrar
+        gsap.to(content, { maxHeight: 0, opacity: 0, duration: 0.35, ease: "power2.inOut" });
+        gsap.to(arrow, { rotation: 0, duration: 0.35, ease: "power2.inOut" });
+      } else {
+        // abrir
+        gsap.to(content, { maxHeight: content.scrollHeight + "px", opacity: 1, duration: 0.35, ease: "power2.inOut" });
+        gsap.to(arrow, { rotation: 90, duration: 0.35, ease: "power2.inOut" });
+      }
     });
   });
 

@@ -1347,6 +1347,74 @@ body {
   font-weight: 600;
 }
 
+/* ================= FAQ ================= */
+.product-faq {
+  max-width: 720px;
+  margin: 60px auto;
+}
+
+.faq-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+  color: #fff;
+  text-align: center;
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(123,193,207,0.6);
+  overflow: hidden;
+}
+
+.faq-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.faq-toggle:hover {
+  background: rgba(123,193,207,0.1);
+}
+
+.arrow-icon {
+  transition: transform 0.35s ease;
+  font-size: 1rem;
+  color: #7BC1CF;
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 20px;
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+}
+
+.faq-content p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  margin: 12px 0;
+}
+
 
 button,
 .btn-edit,
