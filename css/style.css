@@ -740,7 +740,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%) rotate(-4deg);
     font-family: "Bootzy", sans-serif;
-    font-size: clamp(5rem, 12vw, 18rem);
+    font-size: clamp(5rem, 7vw, 18rem);
     color: rgb(40, 40, 40);
     white-space: nowrap;
     pointer-events: none;
