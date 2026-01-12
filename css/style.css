@@ -2008,8 +2008,8 @@ footer {
 }
 
 .btn-edit.btn-product:hover {
-  background: linear-gradient(135deg, #7BC1CF, #d4af37);
-  color: #000;
+  background: linear-gradient(135deg, #3F0043, #56579C);
+  color: #ffffff;
   box-shadow: 0 4px 12px rgba(123,193,207,0.5);
   transform: translateY(-2px);
 }
@@ -2182,7 +2182,7 @@ footer {
 
 .related-card:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(123,193,207,0.4);
+  box-shadow: 0 8px 20px rgba(159, 123, 207, 0.4);
 }
 
 .related-img-frame {
@@ -2206,9 +2206,9 @@ footer {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: linear-gradient(135deg, #7BC1CF, #d4af37);
+  background: linear-gradient(135deg, #3F0043, #56579C);
   border: none;
-  color: #000;
+  color: #ffffff;
   padding: 6px 14px;
   border-radius: 30px;
   font-weight: 700;
@@ -2221,6 +2221,7 @@ footer {
 .related-card:hover .btn-hover-cart {
   opacity: 1;
   transform: translateY(0);
+  color: #ffffff;
 }
 
 /* Badges de producto */
