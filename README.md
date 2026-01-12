@@ -1,4 +1,9 @@
 # Web_Carcomania
+
+
+
+Pruebas
+
 startCircle.addEventListener("click", () => {
   // Animación de salida
   gsap.to(".start-screen", {
@@ -13,17 +18,6 @@ startCircle.addEventListener("click", () => {
   });
 });
 
-.profile-hero::after {
-  content: "";
-  position: absolute;
-  top: -40%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background: radial-gradient(
-    circle at top,
-    rgba(255,255,255,0.06),
-    transparent 60%
-  );
-  pointer-events: none;
-}
+
+
+esto es una prueba :) 
