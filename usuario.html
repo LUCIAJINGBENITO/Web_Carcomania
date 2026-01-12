@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>AURA</title>
+
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- AOS -->
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <section class="user-area py-5">
+            <div class="container">
+          
+                <!-- Header -->
+                <div class="row mb-5">
+                    <div class="col d-flex flex-column">
+                        <h2 class="user-title hover-text">Mi Garaje</h2>
+                        <p class="user-subtitle hover-text">Tu espacio personal en Carcomanía</p>
+                    </div>
+                </div>
+
+                <!-- Perfil detallado -->
+                <div class="row mb-5">
+                    <div class="col">
+                        <div class="profile-card profile-hero">
+                            <!-- Avatar y badge -->
+                            <div class="profile-avatar">
+                                <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12" alt="Avatar usuario">
+                                <span class="level-badge gold">Oro</span>
+                            </div>
+                            <!-- Información principal -->
+                            <div class="profile-info">
+                                <div class="profile-name">
+                                    <h3 class="hover-text">Jota</h3>
+                                    <p class="hover-text">Nivel Carcomanía Club</p>
+                                </div>
+                    
+                                <div class="level-info">
+                                    <span class="level-name">Oro</span>
+                                    <span class="level-icon">★</span>
+                                </div>
+                        
+                                <button class="btn-edit hover-text clickable">Editar perfil</button>
+                            </div>
+
+                            <div class="profile-extra">
+                                <!-- Barra de progreso -->
+                                <div class="level-progress">
+                                    <span>Progreso: 75%</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                        
+                                <!-- Iconos de logros -->
+                                <div class="profile-icons">
+                                    <span class="icon">🏆</span>
+                                    <span class="icon">⚡</span>
+                                    <span class="icon">⭐</span>
+                                </div>
+                        
+                                <!-- Mini-avatar decorativo -->
+                                <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d" alt="Decoración" class="avatar-mini">
+                            </div>
+                    
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Perfil + puntos -->
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="user-card highlight">
+                            <h3 class="hover-text">CarcomaníaClub</h3>
+                            <span class="points hover-text">1.250 puntos</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Mi coche -->
+                <div class="row mb-5">
+                    <div class="col">
+                        <div class="garage-card">
+                            <div class="garage-info">
+                                <h3 class="hover-text">Mi coche</h3>
+                                <p class="hover-text">BMW Serie 1 · 2021</p>
+                            </div>
+                            <div class="garage-img">
+                                <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Accesorios guardados -->
+                <div class="row mb-3"> <!-- fila solo para el título -->
+                    <div class="col-12">
+                        <h3 class="hover-text">Accesorios guardados</h3>
+                    </div>
+                </div>
+
+                <div class="row g-4"> <!-- fila solo para las tarjetas -->
+                    <div class="col-md-4">
+                        <div class="accessory-mini">
+                            <div class="glow"></div>
+                            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738" alt="">
+                            <span class="hover-text">Vinilo negro mate</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="accessory-mini">
+                            <div class="glow"></div>
+                            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738" alt="">
+                            <span class="hover-text">Emblema 3D</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a href="catalogo.html" class="accessory-mini empty accessory-link">
+                            <span class="hover-text clickable">+ Guardar nuevo</span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Panel de usuario -->
+                <div class="row mt-5">
+                    <div class="col">
+                        <div class="user-panel">
+                            <!-- Mis beneficios -->
+                            <div class="panel-item panel-accordion">
+
+                                <button class="panel-header" aria-expanded="false">
+                                    <span class="summary-text hover-text">Mis beneficios</span>
+                              
+                                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24">
+                                        <path d="M8 5l8 7-8 7" fill="none" stroke="currentColor" stroke-width="2" />
+                                  </svg>
+                                </button>
+                              
+                                <div class="panel-content">
+                                    <ul>
+                                        <li>Descuentos exclusivos</li>
+                                        <li>Acceso anticipado</li>
+                                        <li>Eventos privados</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Mis pedidos -->
+                            <div class="panel-item panel-accordion">
+                                <button class="panel-header" aria-expanded="false">
+                                    <span class="summary-text hover-text">Mis pedidos</span>
+                              
+                                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24">
+                                        <path d="M8 5l8 7-8 7" fill="none" stroke="currentColor" stroke-width="2" />
+                                  </svg>
+                                </button>
+
+                                <div class="panel-content">
+                                    <ul>
+                                        <li>Pedido #3921 – Enviado</li>
+                                        <li>Pedido #3810 – Entregado</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Mis recompensas -->
+                            <div class="panel-item panel-accordion">
+                                <button class="panel-header" aria-expanded="false">
+                                    <span class="summary-text hover-text">Mis recompensas</span>
+                              
+                                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24">
+                                        <path d="M8 5l8 7-8 7" fill="none" stroke="currentColor" stroke-width="2" />
+                                  </svg>
+                                </button>
+                                
+                                <div class="panel-content">
+                                    <ul>
+                                        <li>Vinilo gratis (500 pts)</li>
+                                        <li>Descuento 20%</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Mis retos y participación -->
+                            <div class="panel-item panel-accordion">
+                                <button class="panel-header" aria-expanded="false">
+                                    <span class="summary-text hover-text">Mis retos y participación</span>
+                              
+                                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24">
+                                        <path d="M8 5l8 7-8 7" fill="none" stroke="currentColor" stroke-width="2" />
+                                  </svg>
+                                </button>
+
+                                <div class="panel-content">
+                                    <ul>
+                                        <li>Reto mensual – Completado</li>
+                                        <li>Ranking semanal – Top 10%</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Configuración -->
+                            <div class="panel-item panel-accordion">
+                                <button class="panel-header" aria-expanded="false">
+                                    <span class="summary-text hover-text">Configuración</span>
+                              
+                                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24">
+                                        <path d="M8 5l8 7-8 7" fill="none" stroke="currentColor" stroke-width="2" />
+                                  </svg>
+                                </button>
+                                
+                                <div class="panel-content">
+                                    <ul>
+                                        <li>Datos personales</li>
+                                        <li>Notificaciones</li>
+                                        <li>Cerrar sesión</li>
+                                    </ul>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    </div>
+                </div>
+  
+          
+            </div>
+        </section>
+
+        <!-- Volver arriba -->
+        <button class="scroll-top" aria-label="Volver arriba">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+            <path d="M12 5l-7 7h4v7h6v-7h4z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+        </button>
+          
+        
+        <!-- SCRIPTS PRINCIPALES -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+        <!-- Swiper -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+        <!-- GSAP + ScrollTrigger -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+
+        <!-- LENIS -->
+        <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
+
+        <!-- SCRIPTS LOCALES -->
+        <script src="js/script.js"></script>
+        <script src="js/animations.js"></script>
+    </body>
+    <canvas id="mouse-bg"></canvas>
+</html>
