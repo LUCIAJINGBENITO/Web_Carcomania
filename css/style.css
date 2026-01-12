@@ -18,12 +18,41 @@
 }
 
 * {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-  
+
+/* Variables de color */
+:root{
+  --white: #fff;
+  --gradient-text: linear-gradient(90deg, #3F0043, #56579C);
+  --darkpurple: #3F0043;
+  --lightpurple: #56579C;
+  --lilac: #EAD5F3;
+}
+
+
 body {
+    margin: 0;
+    background: #0e0e0e;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Tipografías */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@font-face {
+  font-family: "Bootzy";
+  src: url("../media/typo/BootzyTM.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
   margin: 0;
   background: #0e0e0e;
   color: white;
@@ -144,6 +173,904 @@ body {
   
 /* Color especial al pasar por encima del círculo */
 .start-circle:hover ~ .custom-cursor {
+    background-color: #7BC1CF; /* color al pasar por encima */
+}
+
+
+
+ /* <!-- NAVBAR --> */
+
+
+/* === NAVBAR GLASSMORPHISM === */
+.carco-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: linear-gradient(120deg, rgb(0, 0, 0), rgba(144, 12, 215, 0.12),rgba(144, 12, 215, 0.12),rgb(0, 0, 0));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 18px 40px rgb(0, 0, 0), 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.carco-logo {
+  width: 36px;
+  height: 36px;
+  padding: 4px;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* === MENÚ CENTRADO === */
+.carco-nav-center {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.carco-nav-link {
+  position: relative;
+  padding: 0.5rem 1rem !important;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: rgba(245, 245, 245, 0.78) !important;
+  transition: color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+  opacity: 0.8;
+}
+
+.carco-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.2rem;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 90%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #3F0043, #56579C);
+  box-shadow: 0 0 12px rgba(199, 72, 255, 0.7);
+  transition: transform 0.25s ease;
+}
+
+.carco-nav-link:hover {
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+.carco-nav-link:hover::after,
+.carco-nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.carco-nav-link.active {
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+/* === ICONOS DERECHA === */
+.carco-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.14), rgba(8, 6, 18, 0.96));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fdfbff;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.18s ease, background 0.25s ease;
+}
+
+.carco-icon-btn:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 20px rgba(124, 53, 255, 0.7);
+  transform: translateY(-1px) scale(1.02);
+  background: radial-gradient(circle at 0% 0%, rgba(255, 106, 136, 0.2), rgba(15, 10, 28, 1));
+}
+
+.carco-icon-btn:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 0 8px rgba(124, 53, 255, 0.4);
+}
+
+.carco-icon-badge {
+ position: absolute; 
+ top: -8px; 
+ right: -10px; 
+ min-width: 22px; 
+ height: 22px; 
+ padding: 0 6px; 
+ border-radius: 999px; 
+ font-size: 0.75rem; 
+ font-weight: 700; 
+ background: linear-gradient(135deg, #ff6a88, #ff1744); 
+ color: #fff; 
+ box-shadow: 0 0 12px rgba(255, 23, 68, 0.9); 
+ 
+ display: flex; 
+ align-items: center; 
+ justify-content: center; 
+ z-index: 10; 
+ transition: transform 0.2s ease;
+}
+
+/* === PANEL CARRITO === */
+.carco-cart-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(360px, 100%);
+  height: 100vh;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 16px 0 0 16px;
+  transform: translateX(110%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 2000;
+  background: linear-gradient(135deg, rgba(10, 5, 20, 0.95), rgba(40, 20, 60, 0.92)); 
+  backdrop-filter: blur(28px); 
+  -webkit-backdrop-filter: blur(28px); 
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.95);
+}
+
+.carco-cart-panel.show {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.carco-cart-backdrop {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(123, 47, 247, 0.18), rgba(0, 0, 0, 0.82));
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 1500;
+}
+
+.carco-cart-backdrop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.carco-cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carco-cart-body {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.carco-cart-item {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.6rem 0.7rem;
+  border-radius: 14px;
+  background: radial-gradient(circle at top left, rgba(123, 47, 247, 0.35), rgba(5, 3, 18, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.carco-cart-thumb {
+  width: 64px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff6a88, #7b2ff7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
+.carco-cart-info-title {
+  font-size: 0.85rem;
+  margin-bottom: 0.15rem;
+}
+
+.carco-cart-meta {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.carco-cart-price {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.carco-cart-qty{
+     display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) { 
+    .carco-icon-badge { 
+        top: -6px; 
+        right: -8px; 
+        min-width: 20px; 
+        height: 20px; 
+        font-size: 0.7rem; 
+        padding: 0 5px; 
+    } 
+}
+
+
+/* Empieza la HOME  */
+
+/* ==== EFECTO DE PULSO RADIAL EN EL FONDO ==== */
+
+
+.parallax-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle, #000000 30%, #56579cae 50%, #3f0043d3 70%);
+  
+
+  background-position: center center;  
+  background-repeat: no-repeat;
+  background-size: 140% 140%;      
+  
+  animation: pulseRadial 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseRadial {
+  0% {
+    background-size: 120% 120%;
+    opacity: 0.55;
+  }
+  50% {
+    background-size: 200% 200%;
+    opacity: 0.9;
+  }
+  100% {
+    background-size: 120% 120%;
+    opacity: 0.55;
+  }
+}
+
+
+
+/* ===============================
+   HERO HOME
+
+.carco-hero {
+  position: relative;
+  min-height: 91vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.5rem;
+  overflow: hidden;
+}
+
+/* Palabra gigante fondo */
+.carco-hero-bg {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Bootzy", sans-serif;
+  font-size: clamp(6rem, 20vw, 22rem);
+  color: var(--lilac);
+  white-space: nowrap;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Contenido */
+.carco-hero-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+/* Imagen coche */
+.carco-hero-car img {
+  width: 700px;
+  max-width: 100%;
+}
+
+/* Lema */
+.carco-hero-tagline {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  line-height: 1;
+}
+
+/* Botones */
+.carco-hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+
+
+.carco-btn-primary,
+.carco-btn-secondary {
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.carco-btn-primary {
+  background: var(--gradient-text);
+  color: #fff;
+  box-shadow: 0 0 24px rgba(123, 47, 247, 0.6);
+}
+
+.carco-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 36px rgba(123, 47, 247, 0.9);
+}
+
+.carco-btn-secondary {
+  background: rgba(255, 255, 255, 0);
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  color: white;
+}
+
+.carco-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Glow inferior */
+.carco-hero-glow {
+  position: absolute;
+  bottom: -25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150%;
+  height: 120%;
+  background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 1) 0%,          /* centro negro */
+      rgba(0, 0, 0, 0.9) 20%,       /* transición suave */
+      rgba(90, 0, 140, 0.45) 55%,   /* morado medio */
+      rgba(140, 60, 255, 0.35) 75%, /* morado claro */
+      rgba(0, 0, 0, 0) 100%         /* desvanecimiento */
+  );
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 990px) {
+  .carco-hero {
+    padding-top: 0.2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    min-height: 91vh;
+  }
+
+  .carco-hero-bg {
+    top: 30%;
+  }
+
+  .carco-hero-car img {
+    width: 500px;
+    max-width: 100%;
+  }
+  
+}
+
+@media (max-width: 600px) {
+  .carco-hero-actions {
+    flex-direction: column;  
+    align-items: center;      
+    width: 100%;
+  }
+
+  .carco-hero-actions a {
+    width: 80%;               
+    text-align: center;
+  }
+  
+  .carco-hero-bg {
+    top: 25%;
+  }
+}
+
+/* Termina el contenido  */
+
+/* ----- Termina la HOME ----- */
+
+/* ============================
+   CARROUSEL COMUNIDAD
+
+/* Texto gigante decorativo */
+.carrousel-comunidad-bg {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Bootzy", sans-serif;
+    font-size: clamp(4rem, 18vw, 20rem);
+    color: rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Título principal */
+.carrousel-comunidad-title {
+    font-family: "Bootzy", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--lilac);
+    position: relative;
+    z-index: 5;
+}
+
+/* Carrusel */
+.carrousel-comunidad {
+    position: relative;
+    z-index: 5;
+}
+
+/* Imágenes */
+.carrousel-comunidad-img {
+    object-fit: cover;
+    height: 420px;
+    border-radius: 20px;
+}
+
+/* Texto dentro del carrusel */
+.carrousel-comunidad-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+    width: 90%;
+    padding: 1rem 1.5rem;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    border-radius: 16px;
+}
+
+.carrousel-comunidad-caption h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.carrousel-comunidad-caption p {
+    margin: 0.3rem 0 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Indicadores rectangulares */
+.carrousel-comunidad-indicators button {
+    width: 28px;
+    height: 8px;
+    border-radius: 6px;
+    background-color: rgba(255,255,255,0.45);
+    border: none;
+    margin: 0 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carrousel-comunidad-indicators .active {
+    background-color: var(--lightpurple);
+    transform: scale(1.15);
+}
+
+/* Botón degradado */
+.btn-comunidad-primary {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    background: var(--gradient-text);
+    color: white;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(123, 47, 247, 0.5);
+    transition: 0.25s ease;
+}
+
+.btn-comunidad-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 35px rgba(123, 47, 247, 0.9);
+}
+
+/* Botón bordeado */
+.btn-comunidad-secondary {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    background: transparent;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.39);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    text-decoration: none;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    transition: 0.25s ease;
+}
+
+.btn-comunidad-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carrousel-comunidad-img {
+        height: 260px;
+    }
+
+    .carrousel-comunidad-bg {
+        top: 10%;
+        font-size: clamp(3rem, 22vw, 12rem);
+    }
+}
+
+
+/* ---- Termina el Carrousel ---- */
+
+/* ============================
+   SECCIÓN RECOMENDACIONES
+
+.carco-reco-title {
+    font-family: "Bootzy", sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    color: var(--lilac);
+}
+
+.carco-reco-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-top: -10px;
+}
+
+/* ===== TEXTO GIGANTE DECORATIVO EN RECOMENDACIONES ===== */
+.carco-reco-section {
+    position: relative;
+    overflow: hidden; /* evita scroll horizontal y recorta el texto gigante */
+}
+
+.carco-reco-bgword {
+    position: absolute;
+    top: 15%; /* ajusta la altura del texto decorativo */
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-4deg);
+    font-family: "Bootzy", sans-serif;
+    font-size: clamp(5rem, 7vw, 18rem);
+    color: rgb(40, 40, 40);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    width: max-content; /* permite que sea enorme sin romper el layout */
+}
+
+/* Asegura que el contenido esté por encima del texto decorativo */
+.carco-reco-title,
+.carco-reco-subtitle,
+.carco-reco-card {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* CARD estilo imagen adjunta */
+.carco-reco-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.carco-reco-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(123, 47, 247, 0.4);
+}
+
+/* Imagen */
+.carco-reco-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* Info */
+.carco-reco-info {
+    flex: 1;
+}
+
+.carco-reco-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.carco-reco-price {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Botón degradado */
+.carco-reco-btn {
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    background: var(--gradient-text);
+    border: none;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: 0.25s ease;
+}
+
+.carco-reco-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(123, 47, 247, 0.7);
+}
+
+/* Modal */
+.carco-modal {
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+/* Termina las recomendaciones  */
+
+/* ============================
+   SECCIÓN PROMOCIONAL
+
+.carco-promo-section {
+    max-width: 80000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.carco-promo-text {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin-bottom: 1rem;
+}
+
+.carco-promo-discount {
+  font-family: "Bootzy", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+/* Código FORYOU10 */
+.carco-promo-code-wrapper {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.199);
+  padding: 0.2rem 1.6rem;
+  border-radius: 12px;
+  transform: rotate(-2deg);
+  margin-bottom: 1.5rem;
+}
+
+.carco-promo-code {
+  font-family: "Bootzy", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 4rem);
+  letter-spacing: 0.08em;
+  color: white;
+}
+
+/* Texto inferior */
+.carco-promo-subtext {
+  font-size: 1rem;
+  opacity: 0.75;
+  line-height: 1.5;
+}
+
+/* Texto decorativo gigante */
+.carco-promo-bgword {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-4deg);
+  font-family: "Bootzy", sans-serif;
+  font-size: clamp(5rem, 12vw, 18rem);
+  color: rgb(40, 40, 40);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: -1;
+  width: max-content;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .carco-promo-code-wrapper {
+    padding: 0.5rem 1.4rem;
+    transform: rotate(-1.5deg);
+  }
+}
+/* termina la sección de promoción  */
+
+/* empieza el footer  */
+footer {
+  background: linear-gradient(217deg,
+      black,
+      rgba(255, 0, 0, 0) 30.71%),
+    linear-gradient(127deg, #0f0117, #2b1b6cea 60.71%),
+    linear-gradient(336deg, #321a5799, #450d60 90.71%);
+  color: #fff;
+  padding: 40px 20px 20px 20px;
+  margin-top: 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+  margin: 5px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li a:hover {
+  color: black;
+}
+
+.footer-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section input[type="email"] {
+  padding: 10px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  color: #fff;
+}
+
+.footer-section button {
+  margin-right: 15px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-section button:hover {
+  background: rgba(0, 0, 0, 0.584);
+}
+
+.social-icons {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.social-icons li {
+  margin-right: 10px;
+}
+
+.social-icons li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+}
+
+.social-icons li a:hover {
+  color: black;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid white;
+  margin-top: 20px;
+}
+
+.back_home {
+  align-items: center;
+  color: white !important; 
+    text-decoration: none;
+}
+
+.back_home:hover {
+  color: black;
+}
+
+/* acaba el footer  */
   background-color: #7BC1CF; /* color al pasar por encima */
 }
 
@@ -1482,7 +2409,6 @@ button,
 
 /* ===============================
    MEDIA QUERYS
-================================ */
 
 
 @media (max-width: 768px) {
