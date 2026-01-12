@@ -1089,7 +1089,7 @@ footer {
   color: #fff;
   position: relative;
   display: inline-block;
-  background: linear-gradient(90deg, #7BC1CF, #d4af37);
+  background: linear-gradient(135deg, #3F0043, #56579C);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -1102,7 +1102,7 @@ footer {
   bottom: -6px;
   width: 50%;
   height: 4px;
-  background: linear-gradient(90deg, #7BC1CF, #d4af37);
+  background: linear-gradient(135deg, #3F0043, #56579C);
   border-radius: 2px;
   opacity: 0.7;
 }
@@ -1166,10 +1166,9 @@ footer {
 
 .user-card.highlight {
   background: linear-gradient(135deg, #1f1f1f, #111);
-  border: 1px solid rgba(212,175,55,0.3);
+  border: 1px solid rgb(179 55 212 / 30%);
   box-shadow:
-    0 20px 50px rgba(212,175,55,0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  0 20px 50px rgb(175 55 212 / 30%), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .user-card.highlight:hover {
@@ -1272,7 +1271,7 @@ footer {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  background: linear-gradient(135deg, #bc62d1, #8a749a);
   color: #000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
@@ -1322,26 +1321,26 @@ footer {
 }
 
 .level-icon {
-  color: #d4af37;
+  color: #ad46cd;
   font-size: 1.2rem;
-  text-shadow: 0 0 4px rgba(212,175,55,0.7);
+  text-shadow: 0 0 4px rgb(182 55 212 / 70%);
 }
 
 .btn-edit {
-  background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(245,215,110,0.2));
-  border: 1px solid rgba(212,175,55,0.6);
+  background: radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.14), rgba(8, 6, 18, 0.96));
+  border: 1px solid rgba(255, 255, 255, 0.16);
   padding: 10px 22px;
   border-radius: 999px;
   color: #fff;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.18s ease, background 0.25s ease;
 }
 
 .btn-edit:hover {
-  background: linear-gradient(135deg, #d4af37, #f5d76e);
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(212,175,55,0.5);
-  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 20px rgba(124, 53, 255, 0.7);
+  transform: translateY(-1px) scale(1.02);
+  background: radial-gradient(circle at 0% 0%, rgba(255, 106, 136, 0.2), rgba(15, 10, 28, 1));
 }
 
 .profile-extra {
@@ -1379,7 +1378,7 @@ footer {
 .progress-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  background: linear-gradient(135deg, #bc62d1, #8a749a);
   transition: width 0.3s ease;
 }
 
@@ -1467,23 +1466,21 @@ footer {
   margin-bottom: 40px;
 
   background:
-    radial-gradient(circle at top left, rgba(123,193,207,0.25), transparent 40%),
-    linear-gradient(135deg, rgba(25,25,25,0.85), rgba(5,5,5,0.85));
+  radial-gradient(circle at top left, rgb(114 27 189 / 25%), transparent 40%), linear-gradient(135deg, rgba(25, 25, 25, 0.85), rgba(5, 5, 5, 0.85));
 
   border: 1px solid rgba(255,255,255,0.15);
 
   box-shadow:
     0 40px 80px rgba(0,0,0,0.7),
-    0 0 60px rgba(123,193,207,0.15);
+    0 0 60px rgb(114 27 189 / 25%);
 }
 
 .profile-hero .profile-avatar img {
   width: 160px;
   height: 160px;
-  border: 4px solid rgba(212,175,55,0.5);
+  border: 4px solid rgb(139 55 212 / 50%);
   box-shadow:
-    0 0 0 6px rgba(212,175,55,0.15),
-    0 20px 40px rgba(0,0,0,0.6);
+  0 0 0 6px rgb(142 55 212 / 15%), 0 20px 40px rgb(98 43 114 / 60%);
 }
 
 .profile-hero .profile-info h3 {
@@ -1724,8 +1721,9 @@ footer {
 }
 
 .catalog-area .catalog-filters button {
-  background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(245,215,110,0.2));
-  border: 1px solid rgba(212,175,55,0.6);
+  background: var(--gradient-text);
+  border: 1px solid rgba(124, 53, 255, 0.7);
+  box-shadow: 0 0 10px rgba(123, 47, 247, 0.6);
   border-radius: 999px;
   padding: 8px 16px;
   color: #fff;
@@ -1734,10 +1732,10 @@ footer {
 }
 
 .catalog-area .catalog-filters button:hover {
-  background: linear-gradient(135deg, #d4af37, #f5d76e);
-  color: #000;
+  background: linear-gradient(135deg, #3F0043, #56579C);
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(212,175,55,0.5);
+  box-shadow: 0 0 6px rgba(123, 47, 247, 0.9);
 }
 
 /* AJUSTES POR TIPO */
@@ -1756,9 +1754,9 @@ footer {
 
 .catalog-sort select {
   background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(212,175,55,0.6);
+  border: 1px solid rgba(124, 53, 255, 0.7);
   color: #fff;
-  height: 36px; /* igual que los botones aproximadamente */
+  height: 36px;
   padding: 0 14px;
   border-radius: 999px;
   font-weight: 600;
@@ -1842,23 +1840,23 @@ footer {
 }
 
 .catalog-area .badge-new {
-  background: linear-gradient(135deg, #7BC1CF, #d4af37);
-  color: #000;
+  background: linear-gradient(135deg, #3F0043, #56579C);
+  color: #ffffff;
 }
 
 .catalog-area .badge-popular {
-  background: #ce2017;
-  color: #fff;
+  background: linear-gradient(135deg, #3F0043, #56579C);
+  color: #ffffff;
 }
 
 .catalog-area .badge-exclusive {
-  background: linear-gradient(135deg, #d4af37, #f5d76e);
-  color: #000;
+  background: linear-gradient(135deg, #3F0043, #56579C);
+  color: #ffffff;
 }
 
 .catalog-area .badge-accesorios {
-  background: linear-gradient(135deg, #37cfd4, #756ef5);
-  color: #000;
+  background: linear-gradient(135deg, #3F0043, #56579C);
+  color: #ffffff;
 }
 
 .catalog-area .catalog-card:hover .catalog-badge {
@@ -1867,8 +1865,8 @@ footer {
 }
 
 .catalog-filters button.active {
-  background: linear-gradient(135deg, #7BC1CF, #d4af37);
-  color: #000;
+  background: radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.14), rgba(8, 6, 18, 0.96));
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -1895,7 +1893,7 @@ footer {
 }
 
 .catalog-area .catalog-card .btn-edit:hover {
-  background: linear-gradient(135deg, #7BC1CF, #d4af37);
+  background: linear-gradient(135deg, #3F0043, #56579C);
   color: #000;
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 6px 16px rgba(123,193,207,0.5);
@@ -1903,8 +1901,8 @@ footer {
 
 .btn-details {
   flex: 1;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(123,193,207,0.6);
+  background: #3F0043;
+  border: 1px solid rgba(124, 53, 255, 0.7);
   color: #fff;
   margin-top: 8px;
   text-align: center;
@@ -1916,10 +1914,12 @@ footer {
   transition: all 0.3s ease;
 }
 
+#3F0043, #56579C
+
 .btn-details:hover {
-  background: linear-gradient(135deg, #7BC1CF, #d4af37);
+  background: #56579C;
   color: #000;
-  box-shadow: 0 4px 12px rgba(123,193,207,0.5);
+  box-shadow: 0 4px 12px rgba(212,175,55,0.6);
   transform: translateY(-2px);
 }
 
@@ -1969,7 +1969,7 @@ footer {
   font-size: clamp(3rem, 6vw, 4.5rem);
   letter-spacing: 0.08em;
   margin-bottom: 16px;
-  background: linear-gradient(90deg, #7BC1CF, #d4af37);
+  background: linear-gradient(135deg, #3F0043, #56579C);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -1996,7 +1996,7 @@ footer {
 
 .btn-edit.btn-product {
   background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(123,193,207,0.6);
+  border: 1px solid rgba(124, 53, 255, 0.7);
   color: #fff;
   margin-top: 8px;
   text-align: center;
@@ -2066,7 +2066,7 @@ footer {
   align-items: center;
   background: rgba(255,255,255,0.06);
   color: #fff;
-  border: 1px solid rgba(123,193,207,0.6);
+  border: 1px solid rgba(124, 53, 255, 0.7);
   padding: 12px 20px;
   font-size: 0.95rem;
   font-weight: 600;
@@ -2112,7 +2112,7 @@ footer {
 }
 
 .product-footer .back-link:hover {
-  color: #7BC1CF;
+  color: #56579C;
   transform: translateX(-4px);
 }
 
@@ -2139,7 +2139,7 @@ footer {
 }
 
 .highlight-card:hover {
-  background: linear-gradient(135deg, #7BC1CF, #d4af37);
+  background: linear-gradient(135deg, #3F0043, #56579C);
   color: #000;
   cursor: default;
 }
@@ -2178,7 +2178,6 @@ footer {
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: 1px solid rgba(123,193,207,0.6);
 }
 
 .related-card:hover {
@@ -2239,11 +2238,13 @@ footer {
 }
 
 .badge.nuevo {
-  background: #7BC1CF;
+  background: linear-gradient(135deg, #3F0043, #56579C);
+  color: #ffffff;
 }
 
 .badge.premium {
-  background: #d4af37;
+  background: linear-gradient(135deg, #3F0043, #56579C);
+  color: #ffffff;
 }
 
 /* Meta del producto */
@@ -2287,7 +2288,7 @@ footer {
 .faq-item {
   background: rgba(255,255,255,0.05);
   border-radius: 16px;
-  border: 1px solid rgba(123,193,207,0.6);
+  border: 1px solid rgba(124, 53, 255, 0.7);
   overflow: hidden;
 }
 
@@ -2314,7 +2315,7 @@ footer {
 .arrow-icon {
   transition: transform 0.35s ease;
   font-size: 1rem;
-  color: #7BC1CF;
+  color: rgba(124, 53, 255, 0.7);
 }
 
 .faq-content {
@@ -2387,8 +2388,9 @@ button,
 /* Bootzy SOLO para títulos clave */
 .user-title,
 .user-area h3.hover-text {
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  font-family: "Bootzy", sans-serif;
 }
 
 
