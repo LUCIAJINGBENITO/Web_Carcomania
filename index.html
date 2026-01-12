@@ -41,17 +41,22 @@
             <div class="collapse navbar-collapse" id="navbarContent">
             <div class="carco-nav-center">
                 <ul class="navbar-nav mx-auto gap-2">
-                <li class="nav-item"><a class="nav-link carco-nav-link active" href="#">Sobre Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link carco-nav-link" href="#">Catálogo</a></li>
-                <li class="nav-item"><a class="nav-link carco-nav-link" href="#">CarcomaníaClub</a></li>
-                <li class="nav-item"><a class="nav-link carco-nav-link" href="#">Comunidad</a></li>
-                <li class="nav-item"><a class="nav-link carco-nav-link" href="#">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link carco-nav-link" href="#sobrenosotros">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link carco-nav-link" href="#catalogo">Catálogo</a></li>
+                <li class="nav-item"><a class="nav-link carco-nav-link" href="#carcomaniaclub">Comunidad</a></li>
+                <li class="nav-item"><a class="nav-link carco-nav-link" href="#cargo">CarcomaníaClub</a></li>
+                <li class="nav-item"><a class="nav-link carco-nav-link" href="#contacto">Contacto</a></li>
                 </ul>
             </div>
 
             <div class="d-flex align-items-center gap-2 ms-auto mt-2 mt-lg-0">
                 <button id="cartBtn" class="carco-icon-btn"><i class="bi bi-bag"></i><span id="cartCount" class="carco-icon-badge">2</span></button>
-                <button class="carco-icon-btn"><i class="bi bi-person"></i></button>
+
+                <a href="usuario.html">
+                    <button class="carco-icon-btn"><i class="bi bi-person"></i>
+                    </button>
+                </a>
+
             </div>
             </div>
         </div>
@@ -66,26 +71,26 @@
         </div>
         <div class="carco-cart-body" id="cartItems">
             <!-- Ejemplo de ítem -->
-            <div class="carco-cart-item" data-price="39.90" data-qty="1">
-            <div class="carco-cart-thumb">Sticker</div>
+            <div class="carco-cart-item" data-price="19.99" data-qty="1">
+            <div class="carco-cart-thumb"></div>
             <div>
-                <div class="carco-cart-info-title">Vinilo Urban Glow</div>
+                <div class="carco-cart-info-title">Passion blue sticker</div>
                 <div class="carco-cart-meta">+10 XP</div>
                 <div class="carco-cart-qty mt-1">
                 <button class="carco-cart-qty-btn" data-action="minus">-</button>
-                <span class="carco-cart-qty-value">1</span>
+                <span class="carco-cart-qty-value"> 1 </span>
                 <button class="carco-cart-qty-btn" data-action="plus">+</button>
                 </div>
             </div>
             <div class="text-end">
-                <div class="carco-cart-price"><span class="carco-cart-line-price">39.90</span> €</div>
+                <div class="carco-cart-price"><span class="carco-cart-line-price">19.99</span>€</div>
             </div>
             </div>
         </div>
         <div class="carco-cart-footer">
             <div class="carco-cart-summary">
             <span>Total</span>
-            <span><span id="cartTotal">39.90</span> €</span>
+            <span><span id="cartTotal">19.99</span> €</span>
             </div>
             <button class="carco-primary-btn">Finalizar compra</button>
         </div>
@@ -117,8 +122,8 @@
 
                 <!-- Botones -->
                 <div class="carco-hero-actions">
-                    <a href="#catalogo" class="carco-btn-primary">Ver catálogo</a>
-                    <a href="#vehiculo" class="carco-btn-secondary">Añadir mi vehículo</a>
+                    <a href="catalogo.html" class="carco-btn-primary">Ver catálogo</a>
+                    <a href="usuario.html" class="carco-btn-secondary">Añadir mi vehículo</a>
                 </div>
 
             </div>
@@ -130,8 +135,133 @@
 
         <!------ Acaba la cabecera  ------>
 
+        <!-- Empieza sobre Nosotros -->
+
+        <section class="carco-nosotros" id="sobrenosotros" >
+            <div class="carco-nosotros-header">
+                <div class="carco-nosotros-bg-text bg1">CONÓCENOS</div>
+                <div class="carco-nosotros-bg-text bg2">CONÓCENOS</div>
+                <h2 class="carco-nosotros-title">Sobre Nosotros</h2>
+            </div>
+
+            <div class="carco-nosotros-body">
+                <div class="carco-nosotros-text">
+                <p>
+                    Carcomanía nació del deseo de transformar cada coche en una expresión auténtica de estilo personal.
+                    Lo que empezó como una pasión por el tuning urbano se convirtió en una comunidad vibrante donde cada accesorio cuenta una historia.
+                    Desde nuestros primeros stickers hasta los retos mensuales, hemos crecido junto a quienes viven la carretera como un lienzo.
+                    Hoy, seguimos impulsando la personalización con productos únicos, recompensas reales y una cultura que celebra la identidad sobre ruedas.
+                </p>
+                </div>
+
+                <div class="carco-nosotros-images">
+                <div class="nos-img img1"></div>
+                <div class="nos-img img2"></div>
+                <div class="nos-img img3"></div>
+                <div class="nos-img img4"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Acaba sobre Nosotros -->
+
+        <!-- Empieza NITRO -->
+
+        <section class="nitro-section" id="catalogo">
+            <h2 class="nitro-title">Nueva colección</h2>
+
+            <div class="nitro-bg-text">NITRO</div>
+            <div class="nitro-bg-text second">NITRO</div>
+
+            <div class="nitro-gallery">
+                <img src="media/img/nitro2.webp" class="nitro-photo photo1" alt="Foto 1" />
+                <img src="media/img/nitro3.webp" class="nitro-photo photo2" alt="Foto 2" />
+                <img src="media/img/nitro1.webp" class="nitro-photo photo3" alt="Foto 3" />
+            </div>
+
+            <p class="nitro-description">
+               Diseñada para transformar tu coche al instante: colores eléctricos, acabados más pulidos y piezas que elevan cualquier interior. Si buscas un upgrade visible desde el primer segundo, este es el drop.
+            </p>
+            <br>
+            <br>
+        </section>
+
+        <section class="novedades-rectangulo">
+            <h2 class="novedades-title">Nuestras novedades</h2>
+            <div class="novedades-columnas">
+                <!-- Producto 1 -->
+                <div class="novedad-bloque">
+                <div class="novedad-carousel" id="carousel-1">
+                    <img src="media/img/carrousel1.1.webp" alt="Imagen 1" />
+                    <img src="media/img/carrousel1.2.webp" alt="Imagen 2" />
+                    <img src="media/img/carrousel1.webp" alt="Imagen 3" />
+                </div>
+                <p>Colores eléctricos y acabado brillante.</p>
+                <button class="novedad-btn">Conoce la NITRO</button>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="novedad-bloque">
+                <div class="novedad-carousel" id="carousel-2">
+                    <img src="media/img/bestseller2.webp" alt="Imagen 1" />
+                    <img src="media/img/bestseller1.webp" alt="Imagen 2" />
+                    <img src="media/img/bestseller3.webp" alt="Imagen 3" />
+                </div>
+                <p>Ahora con versiones limitadas.</p>
+                <button class="novedad-btn">Ver Best Sellers</button>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="novedad-bloque">
+                <div class="novedad-carousel" id="carousel-3">
+                    <img src="media/img/llavero1.webp" alt="Imagen 1" />
+                    <img src="media/img/llavero2.webp" alt="Imagen 2" />
+                    <img src="media/img/llavero3.webp" alt="Imagen 3" />
+                </div>
+                <p>Llaveros, vinilos y neumáticos.</p>
+                <button class="novedad-btn">Comprar accesorios</button>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="novedad-bloque">
+                <div class="novedad-carousel" id="carousel-4">
+                    <img src="media/img/interior1.webp" alt="Imagen 1" />
+                    <img src="media/img/interior2.webp" alt="Imagen 2" />
+                    <img src="media/img/interior3.webp" alt="Imagen 3" />
+                </div>
+                <p>Decoración para volante y salpicadero.</p>
+                <button class="novedad-btn">Ver detalles</button>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="novedad-bloque">
+                <div class="novedad-carousel" id="carousel-5">
+                    <img src="media/img/stickers1.webp" alt="Imagen 1" />
+                    <img src="media/img/stickers2.webp" alt="Imagen 2" />
+                    <img src="media/img/stickers3.webp" alt="Imagen 3" />
+                </div>
+                <p>Stickers reflectantes y temáticos.</p>
+                <button class="novedad-btn">Explorar stickers</button>
+                </div>
+
+                <!-- Producto 6 -->
+                <div class="novedad-bloque">
+                <div class="novedad-carousel" id="carousel-6">
+                    <img src="media/img/accesorios1.webp" alt="Imagen 1" />
+                    <img src="media/img/accesorios2.webp" alt="Imagen 2" />
+                    <img src="media/img/accesorios3.webp" alt="Imagen 3" />
+                </div>
+                <p>Accesorios para personalizar el maletero u otras partes del vehículo.</p>
+                <button class="novedad-btn">Ver maletero</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Acaba Nitro -->
+
+
         <!------ Empieza el carrousel  ------>
-        <section class="carrousel-comunidad-section container py-5 position-relative">
+        <section class="carrousel-comunidad-section container py-5 position-relative" id="carcomaniaclub">
 
             <!-- Texto gigante decorativo -->
             <h1 class="carrousel-comunidad-bg">Inspirate</h1>
@@ -443,7 +573,7 @@
 
         <!------ Empieza el footer  ------>
         <footer>
-            <div class="footer-container degradado-principal">
+            <div class="footer-container degradado-principal" id="contacto">
                 <div class="footer-section">
                 <h3>Ayuda</h3>
                 <ul>
@@ -523,6 +653,8 @@
         <script src="js/script.js"></script>
         <script src="js/scripthome.js"></script>
         <script src="js/animations.js"></script>
+        <script src="js/scripthome2.js"></script>
+        <script src="js/animationshome.js"></script>
         
     </body>
     <canvas id="mouse-bg"></canvas>
