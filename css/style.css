@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  cursor: none !important;
 }
 
 /* Tipografías */
@@ -37,6 +38,10 @@ body {
     color: white;
     font-family:"Poppins", sans-serif; 
     overflow-x: hidden; /* solo oculta scroll horizontal*/ overflow-y: auto; /* permite scroll vertical */
+}
+
+body, button, a, input, textarea, select, label {
+  cursor: none !important;
 }
 
 /* Tipografías */
@@ -2687,11 +2692,9 @@ color: white;
     } 
 }
 
-
 /* Empieza la HOME  */
 
 /* ==== EFECTO DE PULSO RADIAL EN EL FONDO ==== */
-
 
 .parallax-hero::before {
   content: "";
