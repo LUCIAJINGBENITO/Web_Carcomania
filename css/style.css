@@ -3940,3 +3940,120 @@ footer {
   }
 }
 
+/* Empieza la seccion de comunidad  */
+
+.comunidad-section {
+  position: relative;
+  background-color: #000;
+  padding: 6rem 2rem;
+  overflow: hidden;
+  text-align: center;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.comunidad-bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  font-size: 18vw;
+  color: rgba(255, 255, 255, 0.03);
+  font-weight: bold;
+  letter-spacing: 1vw;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.comunidad-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.comunidad-intro {
+  font-size: 1.4rem;
+  color: #ccc;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.comunidad-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: "Bootzy", sans-serif;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(124, 53, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 3px;
+}
+
+.comunidad-btn:hover {
+  transform: translateY(-1px) scale(1.05);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 20px rgba(124, 53, 255, 0.7);
+  background: radial-gradient(circle at 0% 0%, rgba(255, 106, 136, 0.2), rgba(15, 10, 28, 1));
+}
+
+/* Texto decorativo gigante */
+.carco-promo-bgword2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) ;
+  font-family: "Bootzy", sans-serif;
+  font-size: clamp(5rem, 15vw, 18rem);
+  color: rgb(46, 34, 54);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: -1;
+  width: max-content;
+  backdrop-filter: blur(6px);
+  -webkit-text-stroke: 1px #56579C; 
+  color: transparent;
+  text-shadow: 0 0 5px #66569c55, 0 0 10px #66569c55, 0 0 20px #66569c55; 
+  
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .comunidad-intro {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .comunidad-btn {
+    font-size: 0.95rem;
+    padding: 0.9rem 1.6rem;
+  }
+
+  .comunidad-bg-text {
+    font-size: 28vw;
+    letter-spacing: 2vw;
+  }
+}

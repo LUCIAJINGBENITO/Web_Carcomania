@@ -67,3 +67,21 @@
 })();
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector(".comunidad-section");
+  section.style.opacity = 0;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          section.style.transition = "opacity 1s ease-out";
+          section.style.opacity = 1;
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  observer.observe(section);
+});
