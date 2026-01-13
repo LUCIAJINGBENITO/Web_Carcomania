@@ -25,76 +25,80 @@
 
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg carco-navbar">
-        <div class="container-fluid px-3 px-md-4">
-            <!-- Logo izquierda -->
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-            <img src="media/img/Vector carcco.png" alt="Carcomanía" class="carco-logo" />
-            <!-- <span class="fw-bold text-uppercase">Carcomanía</span> -->
-            </a>
-
-            <!-- Toggler móvil -->
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-            <span class="navbar-toggler-icon"><span></span></span>
-            </button>
-
-            <!-- Menú centrado + iconos derecha -->
-            <div class="collapse navbar-collapse" id="navbarContent">
-            <div class="carco-nav-center">
-                <ul class="navbar-nav mx-auto gap-2">
-                <li class="nav-item"><a class="nav-link carco-nav-link" href="#sobrenosotros">Sobre Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link carco-nav-link" href="#catalogo">Catálogo</a></li>
-                <li class="nav-item"><a class="nav-link carco-nav-link" href="#carcomaniaclub">Comunidad</a></li>
-                <li class="nav-item"><a class="nav-link carco-nav-link" href="#comunidad">CarcomaníaClub</a></li>
-                <li class="nav-item"><a class="nav-link carco-nav-link" href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
-
-            <div class="d-flex align-items-center gap-2 ms-auto mt-2 mt-lg-0">
-                <button id="cartBtn" class="carco-icon-btn"><i class="bi bi-bag"></i><span id="cartCount" class="carco-icon-badge">2</span></button>
-
-                <a href="usuario.html">
-                    <button class="carco-icon-btn"><i class="bi bi-person"></i>
-                    </button>
+            <div class="container-fluid px-3 px-md-4">
+                <!-- Logo izquierda -->
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                    <img src="media/img/Vector carcco.png" alt="Carcomanía" class="carco-logo" />
+                <!-- <span class="fw-bold text-uppercase">Carcomanía</span> -->
                 </a>
-
-            </div>
-            </div>
-        </div>
-        </nav>
-
-        <!-- Panel carrito -->
-        <div id="cartBackdrop" class="carco-cart-backdrop"></div>
-        <aside id="cartPanel" class="carco-cart-panel">
-        <div class="carco-cart-header">
-            <h5>Tu Carrito</h5>
-            <button id="cartClose" class="carco-icon-btn"><i class="bi bi-x-lg"></i></button>
-        </div>
-        <div class="carco-cart-body" id="cartItems">
-            <!-- Ejemplo de ítem -->
-            <div class="carco-cart-item" data-price="19.99" data-qty="1">
-            <div class="carco-cart-thumb"></div>
-            <div>
-                <div class="carco-cart-info-title">Passion blue sticker</div>
-                <div class="carco-cart-meta">+10 XP</div>
-                <div class="carco-cart-qty mt-1">
-                <button class="carco-cart-qty-btn" data-action="minus">-</button>
-                <span class="carco-cart-qty-value"> 1 </span>
-                <button class="carco-cart-qty-btn" data-action="plus">+</button>
+    
+                <!-- Toggler móvil -->
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"><span></span></span>
+                </button>
+    
+                <!-- Menú centrado + iconos derecha -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <div class="carco-nav-center">
+                        <ul class="navbar-nav mx-auto gap-2">
+                            <li class="nav-item"><a class="nav-link carco-nav-link" href="#sobrenosotros">Sobre Nosotros</a></li>
+                            <li class="nav-item"><a class="nav-link carco-nav-link" href="#catalogo">Catálogo</a></li>
+                            <li class="nav-item"><a class="nav-link carco-nav-link" href="#carcomaniaclub">Comunidad</a></li>
+                            <li class="nav-item"><a class="nav-link carco-nav-link" href="#cargo">CarcomaníaClub</a></li>
+                            <li class="nav-item"><a class="nav-link carco-nav-link" href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+        
+                    <div class="d-flex align-items-center gap-2 ms-auto mt-2 mt-lg-0">
+                        <button id="cartBtn" class="carco-icon-btn"><i class="bi bi-bag"></i><span id="cartCount" class="carco-icon-badge">2</span></button>
+        
+                        <a href="usuario.html">
+                            <button class="carco-icon-btn"><i class="bi bi-person"></i>
+                            </button>
+                        </a>
+        
+                    </div>
                 </div>
             </div>
-            <div class="text-end">
-                <div class="carco-cart-price"><span class="carco-cart-line-price">19.99</span>€</div>
-            </div>
-            </div>
+        </nav>
+    
+        <!-- Panel carrito -->
+        <div id="cartBackdrop" class="carco-cart-backdrop">
+            <aside id="cartPanel" class="carco-cart-panel">
+                <div class="carco-cart-header">
+                    <h5>Tu Carrito</h5>
+                    <button id="cartClose" class="carco-icon-btn"><i class="bi bi-x-lg"></i></button>
+                </div>
+                <div class="carco-cart-body" id="cartItems">
+                    <!-- Ejemplo de ítem -->
+                    <div class="carco-cart-item" data-price="19.99" data-qty="1">
+                        <div class="carco-cart-thumb">
+                            <div>
+                                <div class="carco-cart-info-title">Passion blue sticker</div>
+                                <div class="carco-cart-meta">+10 XP</div>
+                                <div class="carco-cart-qty mt-1">
+                                    <button class="carco-cart-qty-btn" data-action="minus">-</button>
+                                    <span class="carco-cart-qty-value"> 1 </span>
+                                    <button class="carco-cart-qty-btn" data-action="plus">+</button>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <div class="carco-cart-price"><span class="carco-cart-line-price">19.99</span>€</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carco-cart-footer">
+                    <div class="carco-cart-summary">
+                        <span>Total</span>
+                        <span><span id="cartTotal">19.99</span> €</span>
+                    </div>
+                    <a href="checkout.html">
+                        <button class="carco-primary-btn">Finalizar compra</button>
+                    </a>
+                </div>
+            </aside>
         </div>
-        <div class="carco-cart-footer">
-            <div class="carco-cart-summary">
-            <span>Total</span>
-            <span><span id="cartTotal">19.99</span> €</span>
-            </div>
-            <button class="carco-primary-btn">Finalizar compra</button>
-        </div>
-        </aside>
 
 
 
@@ -197,7 +201,10 @@
                     <img src="media/img/carrousel1.webp" alt="Imagen 3" />
                 </div>
                 <p>Colores eléctricos y acabado brillante.</p>
-                <button class="novedad-btn">Conoce la NITRO</button>
+                <a href="catalogo.html">
+                    <button class="novedad-btn">Conoce la NITRO</button>
+                </a>
+                
                 </div>
 
                 <!-- Producto 2 -->
@@ -208,7 +215,10 @@
                     <img src="media/img/bestseller3.webp" alt="Imagen 3" />
                 </div>
                 <p>Ahora con versiones limitadas.</p>
-                <button class="novedad-btn">Ver Best Sellers</button>
+                <a href="catalogo.html">
+                    <button class="novedad-btn">Ver Best Sellers</button>
+                </a>
+
                 </div>
 
                 <!-- Producto 3 -->
@@ -219,7 +229,10 @@
                     <img src="media/img/llavero3.webp" alt="Imagen 3" />
                 </div>
                 <p>Llaveros, vinilos y neumáticos.</p>
-                <button class="novedad-btn">Comprar accesorios</button>
+                <a href="catalogo.html">
+                    <button class="novedad-btn">Comprar accesorios</button>
+                </a>
+                
                 </div>
 
                 <!-- Producto 4 -->
@@ -230,7 +243,10 @@
                     <img src="media/img/interior3.webp" alt="Imagen 3" />
                 </div>
                 <p>Decoración para volante y salpicadero.</p>
-                <button class="novedad-btn">Ver detalles</button>
+                <a href="catalogo.html">
+                    <button class="novedad-btn">Ver detalles</button>
+                </a>
+                
                 </div>
 
                 <!-- Producto 5 -->
@@ -241,7 +257,10 @@
                     <img src="media/img/stickers3.webp" alt="Imagen 3" />
                 </div>
                 <p>Stickers reflectantes y temáticos.</p>
-                <button class="novedad-btn">Explorar stickers</button>
+                <a href="catalogo.html"></a>
+                    <button class="novedad-btn">Explorar stickers</button>
+                </a>
+
                 </div>
 
                 <!-- Producto 6 -->
@@ -252,7 +271,10 @@
                     <img src="media/img/accesorios3.webp" alt="Imagen 3" />
                 </div>
                 <p>Accesorios para personalizar el maletero u otras partes del vehículo.</p>
-                <button class="novedad-btn">Ver maletero</button>
+                
+                <a href="catalogo.html">
+                    <button class="novedad-btn">Ver maletero</button>
+                </a>
                 </div>
             </div>
         </section>
