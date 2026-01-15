@@ -3724,7 +3724,7 @@ footer {
 /* Contenedor principal */
 .checkout-wrapper {
   margin-top: 3rem;
-  background: #0f0f0f; /* fondo oscuro como catálogo */
+  background: #000000; /* fondo oscuro como catálogo */
   border-radius: 1.5rem;
   padding: 3rem;
   max-width: 1500px;
