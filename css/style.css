@@ -1688,6 +1688,13 @@ footer {
   padding: 5rem 0;
   background: #000000;
   color: #fff;
+  min-height: calc(100vh - 120px); /* 120px = altura aproximada de navbar + footer */
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-grid {
+  flex: 1; /* hace que el grid ocupe el espacio disponible */
 }
 
 .catalog-area .catalog-header h2 {
