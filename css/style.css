@@ -1686,7 +1686,7 @@ footer {
 /* ==================================== CATALOGO ==================================== */
 .catalog-area {
   padding: 5rem 0;
-  background: #0f0f0f;
+  background: #000000;
   color: #fff;
 }
 
@@ -1930,7 +1930,7 @@ footer {
 /* ================= PRODUCT PREMIUM ================= */
 
 .product-area.premium {
-  background: #0f0f0f;
+  background: #000000;
 }
 
 .product-hero {
